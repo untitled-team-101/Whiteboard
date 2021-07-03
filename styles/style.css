@@ -8,13 +8,6 @@ body {
     overflow: hidden;
 }
 
-
-/* .body-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 #canvas {
     border: 2px black solid;
 }
@@ -27,4 +20,14 @@ body {
     width: 30vw;
     background-color: black;
     z-index: 1000;
+}
+
+.color-selector {
+    margin-top: 1vh;
+    margin-left: 10vh;
+    position: absolute;
+    height: 8vh;
+    width: 8vh;
+    background-color: blue;
+    border-radius: 100%;
 }
