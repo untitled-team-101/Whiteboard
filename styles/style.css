@@ -29,13 +29,23 @@ body {
     z-index: 1000;
 }
 
-#canvas-switch{
+#canvas-switch {
     position: absolute;
-    margin-top:10px;
+    margin-top: 10px;
     left: 35vw;
     height: 10vh;
 }
-#prev, #next{
+
+#undo,
+#redo {
     padding: 1vh;
     width: 15vw;
+}
+
+#boards {
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 15vw;
+    background-color: gray;
 }

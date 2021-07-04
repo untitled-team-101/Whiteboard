@@ -1,5 +1,5 @@
-let prev = document.getElementById('prev')
-let next = document.getElementById('next')
+let undoBtn = document.getElementById('undo')
+let redoBtn = document.getElementById('redo')
 let canvasContainer = document.getElementById('canvas-container');
 let save = {
     redo_list: [],
@@ -46,5 +46,5 @@ function redo() {
         }
     }
 }
-prev.addEventListener('click', undo)
-next.addEventListener('click', redo)
+undoBtn.addEventListener('click', undo)
+redoBtn.addEventListener('click', redo)

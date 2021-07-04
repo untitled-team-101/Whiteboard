@@ -8,19 +8,25 @@
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/canvas.js" defer></script>
     <script src="scripts/undoRedo.js" defer></script>
-
+    <script src="scripts/multiboard.js" defer></script>
 
 </head>
 
 <body>
     <div id="canvas-switch">
-        <button id="prev">undo</button>
-        <button id="next">redo</button>
+        <button id="prev">PREV</button>
+        <button id="next">NEXT</button>
+        <button id="add">ADD</button>
     </div>
+    <section id="boards">
+    </section>
     <div id="canvas-container">
         <canvas id="canvas"></canvas>
     </div>
-    <div class="toolbar"></div>
+    <div class="toolbar">
+        <button id="undo">undo</button>
+        <button id="redo">redo</button>
+    </div>
 </body>
 
 </html>
