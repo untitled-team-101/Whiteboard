@@ -29,7 +29,7 @@ body {
     display: flex;
 }
 
-.penBox div, input{
+.penBox div, input, button{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;
