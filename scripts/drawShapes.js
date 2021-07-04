@@ -175,5 +175,8 @@ for(let addShapeButton of addShapeButtons){
             onMouseLeaveEvent = drawTriangle
         }
         addAllEvents()
+        selectedPen = 3;
+        selectedColor = color3;
+        colorPickerShape.value = selectedColor;
     })
 }

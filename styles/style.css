@@ -84,7 +84,7 @@ body {
     display: none;
 }
 
-.shapebar div{
+.shapebar div, input {
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;

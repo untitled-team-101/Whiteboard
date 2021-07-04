@@ -2,7 +2,7 @@
 let penBoxEle = document.querySelectorAll('.penbarEle');
 
 let pencilBoxVars = {
-        backgroundColor : '#333333',
+    backgroundColor : '#333333',
     paintingColorOne : 'red',
     paintingColorTwo : 'blue',
     highlighterColor : '#00FF0004',
