@@ -1,3 +1,4 @@
+@import url(Dock.css);
 * {
     margin: 0;
     padding: 0;
@@ -16,15 +17,6 @@ body {
 } */
 
 #canvas {
-    border: 2px black solid;
+
 }
 
-.toolbar {
-    position: absolute;
-    bottom: 0;
-    left: 35vw;
-    height: 10vh;
-    width: 30vw;
-    background-color: black;
-    z-index: 1000;
-}

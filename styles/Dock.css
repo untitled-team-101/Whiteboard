@@ -1,0 +1,29 @@
+.toolbar {
+    position: absolute;
+    bottom: 1vh;
+    left: 25vw;
+    height: 10vh;
+    width: 50vw;
+    background-color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-evenly;
+    border: 1px solid #c1c1c1;
+    border-radius: 10px;
+}
+.tool{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15%;
+    font-size: 3vw;
+    color: #5a5a5a;
+    transition: .5s ease;
+}
+.tool i{
+    transition: .2s ease;
+}
+.tool:hover i{
+    transform: translate(0,-1vh);
+}
