@@ -11,12 +11,6 @@ body {
     background-color: black;
 }
 
-/* .body-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-
 #canvas {
     border: 2px black solid;
 }
