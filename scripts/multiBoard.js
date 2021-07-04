@@ -5,8 +5,8 @@ let save = {
     redo_list: [],
     undo_list: [],
     saveState: function(){
-        let save = canvas.toDataURL()
-        this.undo_list.push(save)
+        let save_point = canvas.toDataURL()
+        this.undo_list.push(save_point)
     }
 }
 function undo(){
@@ -20,6 +20,7 @@ prev.addEventListener('click', function(){
     let image = document.createElement('img')
     image.src = restored_state;
     console.log(restored_state)
+    image.onload = function(){
     ctx.clearRect(0,0,canvas.width,canvas.height)
-    ctx.drawImage(image,0,0,canvas.width,canvas.height)
+    ctx.drawImage(image,0,0,canvas.width,canvas.height)}
 })
