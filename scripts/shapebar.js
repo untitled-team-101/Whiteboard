@@ -1,9 +1,8 @@
-let shapeLine = document.querySelector('#shape-line');
-let shapeRect = document.querySelector('#shape-rect');
-let shapeCircle = document.querySelector('#shape-circle');
 let shapebar = document.querySelector('.shapebar');
 let shapes = document.querySelector('#shapes');
-let goBackShape = document.querySelector('#goBackShape');
+let goBackShape = document.querySelector('#goBackShapebar');
+let clearShapebar = document.querySelector("#clear-canvasShapebar");
+
 
 shapes.addEventListener('click', function (){
     defbar.style.display = 'none';
@@ -15,3 +14,8 @@ goBackShape.addEventListener('click', function (){
     shapebar.style.display = 'none';
 })
 
+clearShapebar.addEventListener("click", function (){
+    ctx.fillStyle = pencilBoxVars.backgroundColor;
+    ctx.clearRect(0,0, canvas.width, canvas.height);
+    ctx.fillRect(0,0, canvas.width, canvas.height);
+})

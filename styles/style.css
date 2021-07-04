@@ -51,7 +51,7 @@ body {
     width: 10vh;
 }
 
-.strokebar{
+.strokebarPenOne, .strokebarPenTwo{
     position: absolute;
     left: 50vw;
     bottom: 0;
@@ -59,11 +59,11 @@ body {
     z-index: 1000;
     transform: translate(-50%,0%);
 }
-.strokebar{
+.strokebarPenOne, .strokebarPenTwo{
     display: none;
 }
 
-.strokebar div{
+.strokebarPenOne div, .strokebarPenTwo div{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;

@@ -1,8 +1,23 @@
-let colorPicker = document.querySelector('#background-color-picker')
+let colorPickerPenOne = document.querySelector('#PenOne-color-picker')
+let colorPickerPenTwo = document.querySelector('#PenTwo-color-picker')
 
-colorPicker.addEventListener("input", color)
-let drawColor = colorPicker.value;
+let selectedColor = '';
+let selectedPen = null;
+let color1 = '#000';
+let color2 = '#fff';
 
-function color() {
-    pencilBoxVars.paintingColorOne = colorPicker.value;
+colorPickerPenOne.addEventListener("input", drawPen);
+colorPickerPenTwo.addEventListener("input", drawPen);
+
+function drawPen() {
+    if(selectedPen === 1){
+        color1 = colorPickerPenOne.value;
+        selectedColor = color1;
+        pencilBoxVars.paintingColorOne = selectedColor;
+    }
+    else {
+        color2 = colorPickerPenTwo.value;
+        selectedColor = color2;
+        pencilBoxVars.paintingColorTwo = selectedColor;
+    }
 }

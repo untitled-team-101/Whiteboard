@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untitled WhiteBoard</title>
-    <script src="./scripts/penbar.js" defer></script>
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/script.js" defer></script>
     <script src="scripts/canvas.js" defer></script>
-    <script src="scripts/pencilBox.js" defer></script>
     <script src="scripts/colorPicker.js" defer></script>
+    <script src="scripts/pencilBox.js" defer></script>
     <script src="./scripts/clear-canvas.js" defer></script>
     <script src="./scripts/penbar.js" defer></script>
     <script src="./scripts/defbar.js" defer></script>
@@ -38,23 +37,30 @@
         <div class="penbarEle" id="eraser">eraser</div>
         <div class="penbarEle" id="undo">undo</div>
         <div class="penbarEle" id="redo">redo</div>
-        <button type ="button" class="penbarEle" id= "clear-canvasPenbar">clear</button>
+        <div class="penbarEle" id= "clear-canvasPenbar">clear</div>
     </div>
 
-    <div class="strokebar">
-        <div class="strokebarEle" id="goBackStroke">Go Back</div>
-        <input class="strokebarEle" type="color" id="background-color-picker" value="#333333">
-        <div id="size-slider" class="strokebarEle">Slider</div>
+    <div class="strokebarPenOne">
+        <div class="strokebarPenOneEle" id="goBackStrokePenOnebar">Go Back</div>
+        <input class="strokebarPenOneEle" type="color" id="PenOne-color-picker" value="#333333">
+        <div id="size-sliderPenTwo" class="strokebarPenOneEle">Slider</div>
+    </div>
+    <div class="strokebarPenTwo">
+        <div class="strokebarPenTwoEle" id="goBackStrokePenTwobar">Go Back</div>
+        <input class="strokebarPenTwoEle" type="color" id="PenTwo-color-picker" value="#333333">
+        <div id="size-sliderPenOneEle" class="strokebarPenTwoEle">Slider</div>
     </div>
 
     <div class="shapebar">
-        <div class="shape" id="goBackShape">Go Back</div>
+        <div class="shape" id="goBackShapebar">Go Back</div>
         <div class="shape" id="shape-line">L</div>
         <div class="shape" id="shape-rect">R</div>
         <div class="shape" id="shape-circle">C</div>
         <div class="shape" id="shape-poly">P</div>
+        <div class="shape">undo</div>
+        <div class="shape">redo</div>
+        <div class="shape" id="clear-canvasShapebar">clear</div>
     </div>
-
 </body>
 
 </html>
