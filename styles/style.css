@@ -8,15 +8,8 @@
 body {
     color: white;
     overflow: hidden;
-    background-color: black;
+    background-color: #333333;
 }
-
-
-/* .body-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 
 #canvas {
     border: 2px black solid;
@@ -36,7 +29,7 @@ body {
     display: flex;
 }
 
-.penBox div{
+.penBox div, input{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;
