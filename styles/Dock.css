@@ -1,9 +1,9 @@
 .toolbar {
     position: absolute;
     bottom: 1vh;
-    left: 25vw;
-    height: 10vh;
-    width: 50vw;
+    left: 30vw;
+    height: 15vh;
+    width: 40vw;
     background-color: white;
     z-index: 1000;
     display: flex;
@@ -11,19 +11,121 @@
     border: 1px solid #c1c1c1;
     border-radius: 10px;
 }
+.toolbar .bar{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}
+#penbar .fas{
+    transform: translate(0,3vh);
+}
 .tool{
     height: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
     width: 15%;
-    font-size: 3vw;
+    font-size: 5vh;
     color: #5a5a5a;
-    transition: .5s ease;
 }
-.tool i{
+.tool .round{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    border-radius: 100%;
+    background-image: radial-gradient(white, rgba(255, 255, 255, 0));
+}
+.tool *{
     transition: .2s ease;
 }
-.tool:hover i{
-    transform: translate(0,-1vh);
+.tool:hover .fa-undo{
+    transform: rotate(-90deg);
+}
+.tool:hover .fa-redo{
+    transform: rotate(90deg);
+}
+.tool .fa-undo{
+    transform: rotate(0deg);
+}
+.tool .fa-redo{
+    transform: rotate(0deg);
+}
+.tool:hover .penbar-icon{
+    transform: translate(0,1vh);
+}
+.tool:hover .check{
+    transform: scale(1.5);
+}
+.penbar-icon{
+    transform: translate(0vh,4vh);
+    height: 90%;
+}
+.check{
+    transform: scale(1);
+}
+.selected{
+
+}
+.selected:hover{
+    transform: none;
+}
+
+
+.pen:hover .fa-pen{
+    transform: rotate(-25deg);
+}
+.text {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.text div{
+    width: 1px;
+    height: 5vh;
+    background-color: black;
+}
+.text:hover div{
+    animation: cursorblink .5s linear infinite;
+}
+.text:hover i{
+    animation: textblink 1s linear infinite;
+}
+@keyframes cursorblink {
+    from{
+        background-color: transparent;
+    }
+    to{
+        background-color: black;
+    }
+}
+
+
+#penbar{
+    /*display: none;*/
+    overflow: hidden;
+    /*background: rgb(255,0,236);*/
+    /*background: linear-gradient(196deg, rgba(255,0,236,1) 0%, rgba(120,0,255,1) 100%);*/
+}
+#defbar{
+    display: none;
+}
+#strokebar{
+    display: none;
+}
+#shapebar{
+    display: none;
+}
+#eraserbar{
+    display: none;
+}
+.strokeslider{
+    width: 50%;
+}
+#stroke{
+    width: 100%;
 }

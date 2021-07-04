@@ -12,10 +12,120 @@
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
-    <div class="toolbar penbar">
-
+<canvas id="canvas"></canvas>
+<div class="toolbar">
+    <div class="bar" id="defbar">
+        <div class="tool pen">
+            <i class="fas fa-pen"></i>
+        </div>
+        <div class="tool text">
+            <i class="fas fa-font"></i>
+            <div></div>
+        </div>
+        <div class="tool image">
+            <i class="fas fa-image"></i>
+        </div>
+        <div class="tool shapes">
+            <i class="far fa-shapes"></i>
+        </div>
+        <div class="tool undo">
+            <i class="fas fa-undo"></i>
+        </div>
+        <div class="tool redo">
+            <i class="fas fa-redo"></i>
+        </div>
     </div>
+    <div class="bar" id="penbar">
+        <div class="tool done">
+            <div class="round">
+                <img src="assets/img/done.svg" class="check" alt="done">
+            </div>
+        </div>
+        <div class="tool pens selected" id="pen1">
+            <div class="round">
+                <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
+            </div>
+        </div>
+        <div class="tool pens" id="pen2">
+            <div class="round">
+                <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
+            </div>
+        </div>
+        <div class="tool highlighter">
+            <div class="round">
+                <img src="assets/img/highlighter.svg" class="penbar-icon" alt="highlighter">
+            </div>
+        </div>
+        <div class="tool eraser">
+            <div class="round">
+                <img src="assets/img/eraser.svg" class="penbar-icon" alt="eraser">
+            </div>
+        </div>
+        <div class="tool undo">
+            <div class="round">
+                <i class="fal fa-undo"></i>
+            </div>
+        </div>
+        <div class="tool redo">
+            <div class="round">
+                <i class="fal fa-redo"></i>
+            </div>
+        </div>
+        <div class="tool clear">
+            <div class="round">
+                <i class="fal fa-"></i>
+            </div>
+        </div>
+    </div>
+    <div class="bar" id="strokebar">
+        <div class="tool done">
+            <img src="assets/img/done.svg" class="penbar-icon" alt="done">
+        </div>
+        <div class="colorpicker">
+            <input type="color" id="color">
+        </div>
+        <div class="strokeslider">
+            <input type="range" id="stroke">
+        </div>
+    </div>
+    <div class="bar" id="eraserbar">
+        <div class="tool done">
+            <img src="assets/img/done.svg" class="penbar-icon" alt="done">
+        </div>
+        <div class="strokeslider">
+            <input type="range" id="erase-stroke">
+        </div>
+    </div>
+    <div class="bar" id="shapebar">
+        <div class="tool done">
+            <div class="round">
+                <img src="assets/img/done.svg" class="check" alt="done">
+            </div>
+        </div>
+        <div class="tool line">
+            <i class="fal fa-horizontal-rule"></i>
+        </div>
+        <div class="tool rectangle">
+            <i class="fal fa-rectangle-landscape"></i>
+        </div>
+        <div class="tool circle">
+            <i class="fal fa-circle"></i>
+        </div>
+        <div class="tool triangle">
+            <i class="fal fa-triangle"></i>
+        </div>
+        <div class="tool undo">
+            <div class="round">
+                <i class="fal fa-undo"></i>
+            </div>
+        </div>
+        <div class="tool redo">
+            <div class="round">
+                <i class="fal fa-redo"></i>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 
 </html>
