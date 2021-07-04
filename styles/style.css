@@ -63,15 +63,30 @@ body {
     display: none;
 }
 
-
 .strokebar div{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;
     width: 10vh;
 }
+
 #size-slider{
     width:25vh !important;
 }
 
+.shapebar{
+    position: absolute;
+    left: 50vw;
+    bottom: 0;
+    height: 10vh;
+    z-index: 1000;
+    transform: translate(-50%,0%);
+    display: none;
+}
 
+.shapebar div{
+    cursor: pointer;
+    border: solid 5px darkred;
+    height: 10vh;
+    width: 10vh;
+}

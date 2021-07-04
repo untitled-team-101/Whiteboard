@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,8 +14,10 @@
     <script src="./scripts/clear-canvas.js" defer></script>
     <script src="./scripts/penbar.js" defer></script>
     <script src="./scripts/defbar.js" defer></script>
-
+    <script src="scripts/shapebar.js" defer></script>
+    <script src="scripts/drawShapes.js" defer></script>
 </head>
+
 <body>
     <canvas id="canvas"></canvas>
 
@@ -44,9 +47,14 @@
         <div id="size-slider" class="strokebarEle">Slider</div>
     </div>
 
-</body>
-
-
+    <div class="shapebar">
+        <div class="shape" id="goBackShape">Go Back</div>
+        <div class="shape" id="shape-line">L</div>
+        <div class="shape" id="shape-rect">R</div>
+        <div class="shape" id="shape-circle">C</div>
+        <div class="shape" id="shape-poly">P</div>
     </div>
+
 </body>
+
 </html>
