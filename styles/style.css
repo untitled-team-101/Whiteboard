@@ -32,11 +32,11 @@ body {
     transform: translate(-50%,0%);
 }
 
-.penBox{
+.penBox, .shapes{
     display: flex;
 }
 
-.penBox div{
+.penBox div, .shapes div{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;
