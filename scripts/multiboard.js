@@ -6,9 +6,8 @@ let add = document.getElementById('add')
 let currentIndex = 0;
 
 let boardStore = []
-let boardTemplate = function(boardState, board, boardUndoList, boardRedoList) {
+let boardTemplate = function(board, boardUndoList, boardRedoList) {
     let boardData = {
-        boardState,
         board,
         boardUndoList,
         boardRedoList
@@ -30,7 +29,7 @@ function addBoard() {
     if (currentIndex + 1 >= boardStore.length) {
         currentIndex += 1;
         let board = canvas.toDataURL()
-        let currentBoard = boardTemplate(false, board, save.undo_list, save.redo_list)
+        let currentBoard = boardTemplate(board, save.undo_list, save.redo_list)
         boardStore.push(currentBoard)
         save.undo_list = []
         save.redo_list = []
