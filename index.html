@@ -7,10 +7,19 @@
     <title>Untitled WhiteBoard</title>
     <link rel="stylesheet" href="styles/style.css">
     <script src="scripts/canvas.js" defer></script>
+    <script src="scripts/multiBoard.js" defer></script>
+    
+    
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
+    <div id = "canvas-switch">
+        <button id = "prev">previous</button>
+        <button id = "next">next</button>
+    </div>
+    <div id = "canvas-container">
+        <canvas id="canvas"></canvas>
+    </div>
     <div class="toolbar"></div>
 </body>
 

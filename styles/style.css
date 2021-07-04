@@ -28,3 +28,14 @@ body {
     background-color: black;
     z-index: 1000;
 }
+
+#canvas-switch{
+    position: absolute;
+    margin-top:10px;
+    left: 35vw;
+    height: 10vh;
+}
+#prev, #next{
+    padding: 1vh;
+    width: 15vw;
+}

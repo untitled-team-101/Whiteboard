@@ -1,4 +1,3 @@
-window.addEventListener('load', ()=> {
     const canvas = document.querySelector('#canvas');
     const ctx = canvas.getContext('2d');
 
@@ -9,6 +8,7 @@ window.addEventListener('load', ()=> {
     function startPosition(){
         painting=true;
         ctx.beginPath();
+        save.saveState();
     }
     function finishedPosition(){
         painting=false;
@@ -20,7 +20,7 @@ window.addEventListener('load', ()=> {
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
-    }
+            }
     function erase(event){
         if(!painting) return;
         ctx.lineWidth = 30;
@@ -32,4 +32,3 @@ window.addEventListener('load', ()=> {
     canvas.addEventListener('mousedown', startPosition);
     canvas.addEventListener('mouseup', finishedPosition);
     canvas.addEventListener('mousemove', draw);
-})
