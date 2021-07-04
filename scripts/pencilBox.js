@@ -1,46 +1,51 @@
 "use strict"
 let penBoxEle = document.querySelectorAll('.penBoxEle');
 
-let backgroundColor = 'black';
-let paintingColorOne = 'red';
-let paintingColorTwo = 'blue';
-let highlighterColor = '#00FF0004';
+let pencilBoxVars = {
+      backgroundColor : 'black'
+    , paintingColorOne : 'red'
+    , paintingColorTwo : 'blue'
+    , highlighterColor : '#00FF0004'
+    , painting : false
+}
+
+
 
 function addPenOneEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
-        if(!painting) return;
+        if(!pencilBoxVars.painting) return;
         ctx.lineWidth = 10;
-        ctx.strokeStyle = paintingColorOne;
+        ctx.strokeStyle = pencilBoxVars.paintingColorOne;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
     onMouseDownEvent = function (){
-        painting=true;
+        pencilBoxVars.painting=true;
         ctx.beginPath();
     }
     onMouseUpEvent = function () {
-        painting = false;
+        pencilBoxVars.painting = false;
     }
     addAllEvents();
 }
 function addPenTwoEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
-        if(!painting) return;
+        if(!pencilBoxVars.painting) return;
         ctx.lineWidth = 10;
-        ctx.strokeStyle = paintingColorTwo;
+        ctx.strokeStyle = pencilBoxVars.paintingColorTwo;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
     onMouseDownEvent = function (){
-        painting=true;
+        pencilBoxVars.painting=true;
         ctx.beginPath();
     }
     onMouseUpEvent = function () {
-        painting = false;
+        pencilBoxVars.painting = false;
     }
     addAllEvents();
 }
@@ -48,19 +53,17 @@ function addPenTwoEvents(){
 function addHighlighterEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
-        if(!painting) return;
-        ctx.lineWidth = 20;
-        ctx.strokeStyle = highlighterColor;
-        ctx.lineCap = 'square';
-        ctx.lineTo(event.clientX, event.clientY);
-        ctx.stroke();
+        if(!pencilBoxVars.painting) return;
+        ctx.globalCompositeOperation = "multiply";
+        ctx.fillStyle = "#ff0";
+        ctx.fillRect(event.clientX-10, event.clientY-10, 20,20);
     }
     onMouseDownEvent = function (){
-        painting=true;
+        pencilBoxVars.painting=true;
         ctx.beginPath();
     }
     onMouseUpEvent = function () {
-        painting = false;
+        pencilBoxVars.painting = false;
     }
     addAllEvents();
 }
@@ -69,19 +72,19 @@ function addHighlighterEvents(){
 function addEraserEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
-        if(!painting) return;
+        if(!pencilBoxVars.painting) return;
         ctx.lineWidth = 50;
-        ctx.strokeStyle = backgroundColor;
+        ctx.strokeStyle = pencilBoxVars.backgroundColor;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
     onMouseDownEvent = function (){
-        painting=true;
+        pencilBoxVars.painting=true;
         ctx.beginPath();
     }
     onMouseUpEvent = function () {
-        painting = false;
+        pencilBoxVars.painting = false;
     }
     addAllEvents();
 }
