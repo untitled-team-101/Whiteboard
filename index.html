@@ -4,26 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untitled WhiteBoard</title>
+    <script src="./scripts/penbar.js" defer></script>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/script.js" defer></script>
     <script src="scripts/canvas.js" defer></script>
     <script src="scripts/pencilBox.js" defer></script>
     <script src="scripts/colorPicker.js" defer></script>
     <script src="./scripts/clear-canvas.js" defer></script>
+    <script src="./scripts/penbar.js" defer></script>
+    <script src="./scripts/defbar.js" defer></script>
+
 </head>
 <body>
     <canvas id="canvas"></canvas>
-    <div class="toolbar">
-        <div class="penBox">
-            <div class="penBoxEle" id="penOne">1</div>
-            <div class="penBoxEle" id="penTwo">2</div>
-            <div class="penBoxEle" id="highlighter">3</div>
-            <div class="penBoxEle" id="eraser">4</div>
-            <input type="color" class="penBoxEle" id="background-color-picker" value="#333333">
-            <div class="penBoxEle" id="undo">6</div>
-            <div class="penBoxEle" id="redo">7</div>
-            <button type ="button" class="penBoxEle" id= "clear-canvas">clear</button>
-        </div>
-    
+
+    <div class="defbar">
+        <div class="defbarEle" id="pen">Pen</div>
+        <div class="defbarEle" id="shapes">Shapes</div>
+        <div class="defbarEle" id="images">Images</div>
+        <div class="defbarEle">Undo</div>
+        <div class="defbarEle">redo</div>
+        <div class="defbarEle">clear</div>
+    </div>
+
+    <div class="penbar">
+        <div class="penbarEle" id="goBackPenbar">Go Back</div>
+        <div class="penbarEle" id="penOne">Pen1</div>
+        <div class="penbarEle" id="penTwo">Pen2</div>
+        <div class="penbarEle" id="highlighter">high</div>
+        <div class="penbarEle" id="eraser">eraser</div>
+        <div class="penbarEle" id="undo">undo</div>
+        <div class="penbarEle" id="redo">redo</div>
+        <button type ="button" class="penbarEle" id= "clear-canvasPenbar">clear</button>
+    </div>
+
+    <div class="strokebar">
+        <div class="strokebarEle" id="goBackStroke">Go Back</div>
+        <input class="strokebarEle" type="color" id="background-color-picker" value="#333333">
+        <div id="size-slider" class="strokebarEle">Slider</div>
     </div>
 
 </body>

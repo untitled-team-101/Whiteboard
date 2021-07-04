@@ -15,23 +15,63 @@ body {
     border: 2px black solid;
 }
 
-.toolbar {
+
+.defbar{
     position: absolute;
     left: 50vw;
     bottom: 0;
     height: 10vh;
-    border: white 2px solid;
     z-index: 1000;
     transform: translate(-50%,0%);
-}
-
-.penBox{
     display: flex;
 }
 
-.penBox div, input, button{
+.defbar div{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;
     width: 10vh;
 }
+
+
+.penbar{
+    position: absolute;
+    left: 50vw;
+    bottom: 0;
+    height: 10vh;
+    z-index: 1000;
+    transform: translate(-50%,0%);
+    display: none;
+}
+
+.penbar div, input, button{
+    cursor: pointer;
+    border: solid 5px darkred;
+    height: 10vh;
+    width: 10vh;
+}
+
+.strokebar{
+    position: absolute;
+    left: 50vw;
+    bottom: 0;
+    height: 10vh;
+    z-index: 1000;
+    transform: translate(-50%,0%);
+}
+.strokebar{
+    display: none;
+}
+
+
+.strokebar div{
+    cursor: pointer;
+    border: solid 5px darkred;
+    height: 10vh;
+    width: 10vh;
+}
+#size-slider{
+    width:25vh !important;
+}
+
+
