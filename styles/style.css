@@ -48,4 +48,8 @@ body {
     height: 100vh;
     width: 15vw;
     background-color: gray;
+    overflow-y: scroll;
+}
+.board{
+    margin: 40px;
 }
