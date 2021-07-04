@@ -1,6 +1,11 @@
 const canvas = document.querySelector('#canvas');
 const ctx = canvas.getContext('2d');
 
+let onMouseDownEvent = null;
+let onMouseUpEvent = null;
+let onMouseMoveEvent = null;
+let painting = false;
+
 canvas.height = window.innerHeight;
 canvas.width = window.innerWidth;
 
@@ -16,25 +21,6 @@ function addAllEvents(){
     canvas.addEventListener('mouseup', onMouseUpEvent);
 }
 
-
-function selectPen(){
-    for(let ele of penBoxEle) {
-        ele.addEventListener('click', function () {
-            console.log(ele.id)
-            if(ele.id === 'penOne'){
-                addPenOneEvents();
-            }
-            else if(ele.id === 'penTwo'){
-                addPenTwoEvents();
-            }
-            else if(ele.id === 'eraser') {
-                addEraserEvents();
-            }
-            else if(ele.id === 'highlighter'){
-                addHighlighterEvents();
-            }
-        });
-    }
-}
-
-selectPen();
+canvas.addEventListener("mouseleave", ()=>{
+    painting = false
+})

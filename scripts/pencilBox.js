@@ -1,15 +1,10 @@
 "use strict"
-
 let penBoxEle = document.querySelectorAll('.penBoxEle');
-let onMouseDownEvent = null;
-let onMouseUpEvent = null;
-let onMouseMoveEvent = null;
+
 let backgroundColor = 'black';
 let paintingColorOne = 'red';
 let paintingColorTwo = 'blue';
 let highlighterColor = '#00FF0004';
-let painting = false;
-
 
 function addPenOneEvents(){
     removeEvents();
@@ -89,4 +84,22 @@ function addEraserEvents(){
         painting = false;
     }
     addAllEvents();
+}
+
+for(let ele of penBoxEle) {
+    ele.addEventListener('click', function () {
+        console.log(ele.id)
+        if(ele.id === 'penOne'){
+            addPenOneEvents();
+        }
+        else if(ele.id === 'penTwo'){
+            addPenTwoEvents();
+        }
+        else if(ele.id === 'eraser') {
+            addEraserEvents();
+        }
+        else if(ele.id === 'highlighter'){
+            addHighlighterEvents();
+        }
+    });
 }

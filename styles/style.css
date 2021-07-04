@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 body {
@@ -34,7 +35,8 @@ body {
 .penBox{
     display: flex;
 }
-#penOne, #penTwo, #eraser, #highlighter , #colorPicker, #undo , #redo{
+
+.penBox div{
     cursor: pointer;
     border: solid 5px darkred;
     height: 10vh;
