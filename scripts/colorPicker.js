@@ -3,8 +3,8 @@ let colorPickerPenTwo = document.querySelector('#PenTwo-color-picker')
 
 let selectedColor = '';
 let selectedPen = null;
-let color1 = '#000';
-let color2 = '#fff';
+let color1 = 'blue';
+let color2 = 'red';
 
 colorPickerPenOne.addEventListener("input", drawPen);
 colorPickerPenTwo.addEventListener("input", drawPen);
@@ -17,7 +17,9 @@ function drawPen() {
     }
     else {
         color2 = colorPickerPenTwo.value;
+        console.log(colorPickerPenTwo)
         selectedColor = color2;
         pencilBoxVars.paintingColorTwo = selectedColor;
+        console.log(pencilBoxVars.paintingColorTwo);
     }
 }

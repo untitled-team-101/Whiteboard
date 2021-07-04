@@ -29,8 +29,9 @@ penTwo.addEventListener('click', function (){
     selectedPen = 2;
     selectedColor = color2;
     colorPickerPenTwo.value = selectedColor;
+    console.log(colorPickerPenTwo);
     penbar.style.display = 'none';
-    strokebarPenOne.style.display = 'flex';
+    strokebarPenTwo.style.display = 'flex';
     letsGoBack(goBackStrokeTwo,penbar,strokebarPenTwo);
 })
 

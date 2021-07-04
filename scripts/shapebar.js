@@ -13,6 +13,7 @@ goBackShape.addEventListener('click', function (){
     defbar.style.display = 'flex';
     shapebar.style.display = 'none';
 })
+console.log(clearShapebar);
 
 clearShapebar.addEventListener("click", function (){
     ctx.fillStyle = pencilBoxVars.backgroundColor;
