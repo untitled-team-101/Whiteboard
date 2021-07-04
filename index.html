@@ -6,12 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Untitled WhiteBoard</title>
     <link rel="stylesheet" href="styles/style.css">
+    <script src="scripts/pencilBox.js" defer></script>
     <script src="scripts/canvas.js" defer></script>
 </head>
 
 <body>
     <canvas id="canvas"></canvas>
-    <div class="toolbar"></div>
+    <div class="toolbar">
+        <div class="penBox">
+            <div class="penBoxEle" id="penOne">1</div>
+            <div class="penBoxEle" id="penTwo">2</div>
+            <div class="penBoxEle" id="highlighter">3</div>
+            <div class="penBoxEle" id="eraser">4</div>
+            <div class="penBoxEle" id="colorPicker">5</div>
+            <div class="penBoxEle" id="undo">6</div>
+            <div class="penBoxEle" id="redo">7</div>
+        </div>
+    </div>
 </body>
 
 </html>

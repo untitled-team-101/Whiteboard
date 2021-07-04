@@ -5,7 +5,9 @@
 }
 
 body {
+    color: white;
     overflow: hidden;
+    background-color: black;
 }
 
 
@@ -21,10 +23,20 @@ body {
 
 .toolbar {
     position: absolute;
+    left: 50vw;
     bottom: 0;
-    left: 35vw;
     height: 10vh;
-    width: 30vw;
-    background-color: black;
+    border: white 2px solid;
     z-index: 1000;
+    transform: translate(-50%,0%);
+}
+
+.penBox{
+    display: flex;
+}
+#penOne, #penTwo, #eraser, #highlighter , #colorPicker, #undo , #redo{
+    cursor: pointer;
+    border: solid 5px darkred;
+    height: 10vh;
+    width: 10vh;
 }
