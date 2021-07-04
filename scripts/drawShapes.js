@@ -111,6 +111,41 @@ function drawCircle(event){
     painting = false;
 }
 
+function setTriangleStart(event){
+    painting = true
+    shapeDrawVars.startX = event.clientX
+    shapeDrawVars.startY = event.clientY
+    shapeDrawVars.prevCtx = canvas.toDataURL()
+    ctx.beginPath()
+    ctx.lineWidth = shapeDrawVars.strokeWidth
+    ctx.strokeStyle = shapeDrawVars.strokeColor
+}
+
+function showCurrentTriangle(event){
+    if(!painting)
+        return
+    let image = document.createElement('img')
+    image.src = shapeDrawVars.prevCtx;
+    image.onload = function(){
+        ctx.beginPath()
+        ctx.clearRect(0,0,canvas.width,canvas.height)
+        ctx.drawImage(image,0,0,canvas.width,canvas.height)
+        let radius = Math.sqrt(
+            Math.pow(shapeDrawVars.startX - event.clientX, 2)
+            + Math.pow(shapeDrawVars.startY - event.clientY, 2)
+        )
+        ctx.moveTo((shapeDrawVars.startX + event.clientX) / 2, shapeDrawVars.startY)
+        ctx.lineTo(event.clientX, event.clientY)
+        ctx.lineTo(shapeDrawVars.startX, event.clientY)
+        ctx.lineTo((shapeDrawVars.startX + event.clientX) / 2, shapeDrawVars.startY)
+        ctx.stroke();
+    }
+}
+
+function drawTriangle(event){
+    painting = false;
+}
+
 for(let addShapeButton of addShapeButtons){
     addShapeButton.addEventListener("click", (event)=>{
         console.log(addShapeButton.id)
@@ -132,6 +167,12 @@ for(let addShapeButton of addShapeButtons){
             onMouseUpEvent = drawCircle
             onMouseMoveEvent =  showCurrentCircle
             onMouseLeaveEvent = drawCircle
+        }
+        else if(addShapeButton.id === "shape-triangle"){
+            onMouseDownEvent = setTriangleStart
+            onMouseUpEvent = drawTriangle
+            onMouseMoveEvent =  showCurrentTriangle
+            onMouseLeaveEvent = drawTriangle
         }
         addAllEvents()
     })
