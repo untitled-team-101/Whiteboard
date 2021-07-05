@@ -14,9 +14,4 @@ goBackShape.addEventListener('click', function (){
     shapebar.style.display = 'none';
 })
 
-clearShapebar.addEventListener("click", function (){
-    save.saveUndoState();
-    ctx.fillStyle = pencilBoxVars.backgroundColor;
-    ctx.clearRect(0,0, canvas.width, canvas.height);
-    ctx.fillRect(0,0, canvas.width, canvas.height);
-})
+clearShapebar.addEventListener("click", clearCanvas)

@@ -19,7 +19,9 @@ colorPickerBackground.addEventListener('focus', saveImg);
 function loadImg(){
     let backgroudImg = document.createElement('img');
     backgroudImg.src = prevBackgroundState;
-    ctx.drawImage(backgroudImg, 0, 0, canvas.width, canvas.height);
+    backgroudImg.onload = ()=>{
+        ctx.drawImage(backgroudImg, 0, 0, canvas.width, canvas.height);
+    }
 }
 
 let prevBackgroundState = canvas.toDataURL(); 
@@ -32,7 +34,7 @@ function Input(){
     pencilBoxVars.backgroundColor = colorPickerBackground.value;
     ctx.fillStyle = pencilBoxVars.backgroundColor;
     ctx.clearRect(0,0, canvas.width, canvas.height);
-    ctx.fillRect(0,0, canvas.width, canvas.height);
+    ctx.beginPath()
     loadImg()
 }
 
