@@ -2,9 +2,11 @@
 
 ## The Whiteboard app you were waiting for
   - This app is made with HTML Canvas, CSS3 and JavaScript
-#### [Try Whiteboard](https://untitled-team-101.github.io/Whiteboard/)
+#### [Try it here](https://untitled-team-101.github.io/Whiteboard/)
 
 ## Screenshots
+![screenshot 1](https://raw.githubusercontent.com/untitled-team-101/Whiteboard/main/assets/screenshots/SC2.png)
+
 ![screenshot 1](https://raw.githubusercontent.com/untitled-team-101/Whiteboard/main/assets/screenshots/SC1.png)
 
 ## Demo
