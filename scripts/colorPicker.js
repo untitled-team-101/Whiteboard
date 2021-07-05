@@ -8,36 +8,16 @@ let selectedPen = null;
 let color1 = 'green';
 let color2 = 'red';
 let color3 = 'black';
-let color4 = '#333333';
+let color4 = '#33ff00';
 
 colorPickerPenOne.addEventListener("input", drawPen);
 colorPickerPenTwo.addEventListener("input", drawPen);
 colorPickerShape.addEventListener('input',drawPen);
-colorPickerBackground.addEventListener('input', Input);
-colorPickerBackground.addEventListener('focus', saveImg);
+colorPickerBackground.addEventListener('input', setBackgroundColor);
 
-function loadImg(){
-    let backgroudImg = document.createElement('img');
-    backgroudImg.src = prevBackgroundState;
-    backgroudImg.onload = ()=>{
-        ctx.drawImage(backgroudImg, 0, 0, canvas.width, canvas.height);
-    }
+function setBackgroundColor(){
+    document.body.style.backgroundColor = colorPickerBackground.value
 }
-
-let prevBackgroundState = canvas.toDataURL(); 
-
-function saveImg() {
-    prevBackgroundState = canvas.toDataURL();
-}
-
-function Input(){
-    pencilBoxVars.backgroundColor = colorPickerBackground.value;
-    ctx.fillStyle = pencilBoxVars.backgroundColor;
-    ctx.clearRect(0,0, canvas.width, canvas.height);
-    ctx.beginPath()
-    loadImg()
-}
-
 
 function drawPen() {
     if(selectedPen === 1){
