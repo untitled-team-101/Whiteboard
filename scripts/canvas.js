@@ -23,4 +23,3 @@ function addAllEvents(){
     canvas.addEventListener('mouseup', onMouseUpEvent);
     canvas.addEventListener("mouseleave", onMouseLeaveEvent);
 }
-

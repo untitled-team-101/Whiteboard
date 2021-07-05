@@ -7,7 +7,6 @@
     <title>Untitled WhiteBoard</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
-    <script src="scripts/canvas.js" defer></script>
     <script src="scripts/dock.js" defer></script>
     <script src="scripts/script.js" defer></script>
     <script src="scripts/canvas.js" defer></script>
@@ -18,6 +17,8 @@
     <script src="./scripts/defbar.js" defer></script>
     <script src="scripts/shapebar.js" defer></script>
     <script src="scripts/drawShapes.js" defer></script>
+    <script src="scripts/undoRedo.js" defer></script>
+    <script src="scripts/multiboard.js" defer></script>
 </head>
 
 <body>
@@ -38,10 +39,10 @@
         <div class="tool defbarEle" id="shapes">
             <i class="far fa-shapes"></i>
         </div>
-        <div class="tool undo defbarEle">
+        <div class="tool undo defbarEle" id="undo">
             <i class="fas fa-undo"></i>
         </div>
-        <div class="tool redo defbarEle">
+        <div class="tool redo defbarEle" id="redo">
             <i class="fas fa-redo"></i>
         </div>
     </div>
@@ -165,7 +166,15 @@
 
     </div>
 </div>
-<div class="multipage-bar closed">
+
+<div id="canvas-switch">
+    <button id="prev">PREV</button>
+    <button id="next">NEXT</button>
+    <button id="add">ADD</button>
+</div>
+
+
+<div class="multipage-bar" id="boards">
     <div class="close-multipage">
         <i class="fas fa-chevron-left"></i>
     </div>
@@ -181,65 +190,25 @@
 
             </div>
         </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-
-            </div>
-        </div>
     </div>
 </div>
 
+
+<body>
+<!--    <div id="canvas-switch">-->
+<!--        <button id="prev">PREV</button>-->
+<!--        <button id="next">NEXT</button>-->
+<!--        <button id="add">ADD</button>-->
+<!--    </div>-->
+<!--    <section id="boards">-->
+<!--    </section>-->
+<!--    <div id="canvas-container">-->
+<!--        <canvas id="canvas"></canvas>-->
+<!--    </div>-->
+<!--    <div class="toolbar">-->
+<!--        <button id="undo">undo</button>-->
+<!--        <button id="redo">redo</button>-->
+<!--    </div>-->
 </body>
 
 </html>

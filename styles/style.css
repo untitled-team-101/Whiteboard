@@ -13,9 +13,6 @@ body {
     background-color: #333333;
 }
 
-
-
-
 /*.defbar{*/
 /*    position: absolute;*/
 /*    left: 50vw;*/
@@ -90,3 +87,32 @@ body {
 /*    height: 10vh;*/
 /*    width: 10vh;*/
 /*}*/
+/*.toolbar {*/
+/*    position: absolute;*/
+/*    bottom: 0;*/
+/*    left: 35vw;*/
+/*    height: 10vh;*/
+/*    width: 30vw;*/
+/*    background-color: black;*/
+/*    z-index: 1000;*/
+/*}*/
+
+#canvas-switch {
+    position: absolute;
+    left: 50vw;
+    top:0;
+    height: 1vh;
+}
+
+/*#boards {*/
+/*    position: absolute;*/
+/*    left: 0;*/
+/*    height: 100vh;*/
+/*    width: 15vw;*/
+/*    background-color: gray;*/
+/*    overflow-y: scroll;*/
+/*}*/
+/*.board{*/
+/*    margin: 40px;*/
+/*}*/
+
