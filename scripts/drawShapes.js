@@ -154,21 +154,25 @@ for (let addShapeButton of addShapeButtons) {
     addShapeButton.addEventListener("click", (event) => {
         removeEvents()
         if (addShapeButton.id === "shape-line") {
+            setActiveStatus(addShapeButton)
             onMouseDownEvent = setLineStart
             onMouseUpEvent = drawLine
             onMouseMoveEvent = showCurrentLine
             onMouseLeaveEvent = drawLine
         } else if (addShapeButton.id === "shape-rect") {
+            setActiveStatus(addShapeButton)
             onMouseDownEvent = setRectStart
             onMouseUpEvent = drawRect
             onMouseMoveEvent = showCurrentRect
             onMouseLeaveEvent = drawRect
         } else if (addShapeButton.id === "shape-circle") {
+            setActiveStatus(addShapeButton)
             onMouseDownEvent = setCircleStart
             onMouseUpEvent = drawCircle
             onMouseMoveEvent = showCurrentCircle
             onMouseLeaveEvent = drawCircle
         } else if (addShapeButton.id === "shape-triangle") {
+            setActiveStatus(addShapeButton)
             onMouseDownEvent = setTriangleStart
             onMouseUpEvent = drawTriangle
             onMouseMoveEvent = showCurrentTriangle

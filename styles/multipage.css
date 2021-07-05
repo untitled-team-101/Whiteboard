@@ -108,7 +108,7 @@
     transition: .5s ease;
 }
 
-.thumbnail:hover {
+.thumbnail:hover , .thumbnail.selected{
     box-shadow: 0 0 10px #000;
 }
 

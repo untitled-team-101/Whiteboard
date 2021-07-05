@@ -25,3 +25,7 @@ body {
 #fileinput{
     display: none;
 }
+
+.selectedTool {
+    background: rgba(0,0,0,0.1);
+}
