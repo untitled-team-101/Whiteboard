@@ -140,7 +140,9 @@ function showPreview() {
             requestingBoard = true
             requestedBoard = thumbnail.thumbIndex
             checkBoardRequest()
-            console.log("t clicked")
+        }
+        if(currentIndex === prewiewIndex){
+            thumbnail.classList.add("selected")
         }
 
         thumbnail_group.appendChild(number)

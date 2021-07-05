@@ -107,6 +107,7 @@ for (let ele of penBoxEle) {
         } else if (ele.id === 'eraser') {
             addEraserEvents();
         } else if (ele.id === 'highlighter') {
+            setActiveStatus(ele)
             addHighlighterEvents();
         }
     });

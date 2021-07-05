@@ -13,3 +13,11 @@ function removeActiveStatus(){
     }
     activeElements = []
 }
+
+function setActiveStatus(element){
+    if (!element.classList.contains("selectedTool")){
+        element.classList.add("selectedTool")
+        removeActiveStatus()
+        activeElements.push(element)
+    }
+}
