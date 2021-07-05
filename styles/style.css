@@ -1,5 +1,6 @@
 @import url(Dock.css);
 @import url(multipage.css);
+@import url(side-btn.css);
 * {
     margin: 0;
     padding: 0;

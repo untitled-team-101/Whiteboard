@@ -1,0 +1,75 @@
+.full-screen {
+    position: absolute;
+    bottom: 5vh;
+    right: 5vh;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 10px;
+    background: rgb(255, 0, 236);
+    background: linear-gradient(196deg, rgba(255, 0, 236, 1) 0%, rgba(120, 0, 255, 1) 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hamburger {
+    position: absolute;
+    top: 5vh;
+    right: 5vh;
+    width: 5vh;
+    height: 5vh;
+    border-radius: 10px;
+    background: rgb(255, 0, 236);
+    background: linear-gradient(196deg, rgba(255, 0, 236, 1) 0%, rgba(120, 0, 255, 1) 100%);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    transition: .5s ease;
+}
+.undo .fa-undo{
+    transform: rotate(0deg);
+}
+.redo .fa-redo{
+    transform: rotate(0deg);
+}
+.undo:hover .fa-undo{
+    transform: rotate(-90deg);
+}
+.redo:hover .fa-redo{
+    transform: rotate(90deg);
+}
+
+.ham-option{
+    width: 30%;
+    height: 90%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    transition: .5s ease;
+ }
+.ham-option i{
+    transition: .5s ease;
+    font-size: 5vh;
+}
+.bg-color input {
+    width: 70%;
+    height: 70%;
+}
+
+.expanded{
+    width: 30vh;
+    height: 10vh;
+}
+.expanded .ham-option{
+    display: flex;
+}
+.expanded .ham-icon{
+    display: none;
+}
+.ham-icon{
+    font-size: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
