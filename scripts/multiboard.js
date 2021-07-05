@@ -2,10 +2,8 @@ let boardSection = document.querySelector('.multipage-thumbnails')
 let prev = document.getElementById('prev')
 let next = document.getElementById('next')
 let add = document.getElementById('add')
-
 let currentIndex = 0;
-let i=0;
-
+let i = 0;
 let boardStore = []
 let boardTemplate = function(board, boardUndoList, boardRedoList) {
     let boardData = {
@@ -35,12 +33,6 @@ function addBoard() {
         save.undo_list = []
         save.redo_list = []
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        let img = document.createElement('img')
-        img.src = board;
-        img.height = "100"
-        img.width = "100"
-        img.style.backgroundColor = "red"
-        boardSection.appendChild(img)
     } else {
         saveHistory();
         boardStore[currentIndex].board = canvas.toDataURL();
@@ -50,12 +42,6 @@ function addBoard() {
         let currentBoard = boardTemplate(false, board, save.undo_list, save.redo_list)
         save.undo_list = []
         save.redo_list = []
-        let img = document.createElement('img')
-        img.src = board;
-        img.height = "100"
-        img.width = "100"
-        img.style.backgroundColor = "red"
-        boardSection.appendChild(img)
         boardStore.push(currentBoard)
     }
     showPreview()
@@ -108,16 +94,27 @@ function nextBoard() {
 }
 
 function showPreview() {
+    boardSection.innerHTML = "";
     for (let boardPreview of boardStore) {
-        let previewImg = document.createElement('img');
+        let thumbnail_group = document.createElement('div')
+        let number = document.createElement('div')
+        let thumbnail = document.createElement('div')
+        let previewImg = document.createElement('img')
+        thumbnail_group.classList.add('thumbnail-group')
+        number.classList.add('number')
+        thumbnail.classList.add('thumbnail')
+        previewImg.classList.add('thumb-img')
+        number.innerHTML = "1."
         previewImg.src = boardPreview.board;
         previewImg.height = "100";
         previewImg.width = "100";
         previewImg.style.backgroundColor = "yellow";
-        boardSection.appendChild(previewImg);
+        thumbnail_group.appendChild(number)
+        thumbnail_group.appendChild(thumbnail)
+        thumbnail.appendChild(previewImg)
+        boardSection.appendChild(thumbnail_group);
     }
 }
-
 add.addEventListener("click", addBoard)
 prev.addEventListener("click", prevBoard)
 next.addEventListener("click", nextBoard)

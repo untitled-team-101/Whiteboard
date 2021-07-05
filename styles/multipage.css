@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
-.multipage-bar{
+.multipage-bar {
     position: absolute;
     left: 0;
     top: 0;
@@ -13,10 +13,10 @@
     flex-direction: column;
     transition: 1s ease;
     box-shadow: 0 0 15px white;
-
     border-radius: 15px;
 }
-.close-multipage{
+
+.close-multipage {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,46 +32,54 @@
     transition: .5s ease;
     box-shadow: 0 0 10px #000;
 }
-.close-multipage i{
+
+.close-multipage i {
     transform: rotate(180deg);
     transition: .5s ease;
 }
-.close-multipage:hover i{
+
+.close-multipage:hover i {
     transform: rotate(0deg);
 }
-.thumbnail-group{
+
+.thumbnail-group {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 15vw;
     color: #333333;
 }
-.thumbnail{
+
+.thumbnail {
     width: 13vw;
     height: 15vh;
     background-color: #fff200;
+    overflow: hidden;
     margin: 2vh 0;
     border-radius: 10px;
     border: 1px solid rgba(125, 125, 125, 0.68);
     transition: .5s ease;
 }
-.thumbnail:hover{
+
+.thumbnail:hover {
     box-shadow: 0 0 10px #000;
 }
-.multipage-titlebar{
+
+.multipage-titlebar {
     display: flex;
     justify-content: center;
     align-items: center;
     width: 20vw;
     height: 10vh;
     /*margin-top: -1vh;*/
-    background: rgb(255,0,236);
-    background: linear-gradient(196deg, rgba(255,0,236,1) 0%, rgba(120,0,255,1) 100%);
+    background: rgb(255, 0, 236);
+    background: linear-gradient(196deg, rgba(255, 0, 236, 1) 0%, rgba(120, 0, 255, 1) 100%);
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     border-top-right-radius: 15px;
 }
-.multipage-thumbnails{
+
+.multipage-thumbnails {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,17 +87,20 @@
     height: 93vh;
     overflow-y: scroll;
 }
-.closed{
-    transform: translate(-19vw,0);
+
+.closed {
+    transform: translate(-19vw, 0);
 }
-.closed i{
+
+.closed i {
     transform: rotate(0deg);
 }
-.closed .close-multipage:hover i{
+
+.closed .close-multipage:hover i {
     transform: rotate(180deg);
 }
 
-.add-page{
+.add-page {
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
     height: 7vh;
@@ -101,20 +112,28 @@
     transition: .5s ease;
     border-bottom-right-radius: 15px;
 }
-.add-page:hover{
+
+.add-page:hover {
     background-color: red;
 }
 
+.thumb-img {
+    height: 100%;
+    width: 100%;
+}
 
 ::-webkit-scrollbar {
     width: 7px;
 }
+
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
 }
+
 ::-webkit-scrollbar-thumb {
     background: #888;
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
 }
