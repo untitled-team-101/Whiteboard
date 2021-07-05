@@ -1,17 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 .multipage-bar{
-    border: 1px solid red;
     position: absolute;
     left: 0;
     top: 0;
     height: 100vh;
     width: 20vw;
     z-index: 100;
-    background-color: red;
+    background-color: white;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
     transition: 1s ease;
+    box-shadow: 0 0 15px white;
+
+    border-radius: 15px;
 }
 .close-multipage{
     display: flex;
@@ -22,11 +25,12 @@
     right: -5vh;
     height: 10vh;
     width: 10vh;
-    background-color: aqua;
+    background-color: #ffffff;
     border-radius: 100%;
     top: 40vh;
     font-size: 5vh;
     transition: .5s ease;
+    box-shadow: 0 0 10px #000;
 }
 .close-multipage i{
     transform: rotate(180deg);
@@ -45,8 +49,14 @@
 .thumbnail{
     width: 13vw;
     height: 15vh;
-    background-color: aqua;
+    background-color: #fff200;
     margin: 2vh 0;
+    border-radius: 10px;
+    border: 1px solid rgba(125, 125, 125, 0.68);
+    transition: .5s ease;
+}
+.thumbnail:hover{
+    box-shadow: 0 0 10px #000;
 }
 .multipage-titlebar{
     display: flex;
@@ -54,15 +64,19 @@
     align-items: center;
     width: 20vw;
     height: 10vh;
-    margin-top: -1vh;
-    background-color: #5a5a5a;
+    /*margin-top: -1vh;*/
+    background: rgb(255,0,236);
+    background: linear-gradient(196deg, rgba(255,0,236,1) 0%, rgba(120,0,255,1) 100%);
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    border-top-right-radius: 15px;
 }
 .multipage-thumbnails{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 20vw;
-    height: 90vh;
+    height: 93vh;
     overflow-y: scroll;
 }
 .closed{
@@ -73,4 +87,34 @@
 }
 .closed .close-multipage:hover i{
     transform: rotate(180deg);
+}
+
+.add-page{
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: bold;
+    height: 7vh;
+    width: 20vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333333;
+    transition: .5s ease;
+    border-bottom-right-radius: 15px;
+}
+.add-page:hover{
+    background-color: red;
+}
+
+
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }
