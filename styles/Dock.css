@@ -48,18 +48,7 @@
 .tool *{
     transition: .2s ease;
 }
-.tool:hover .fa-undo{
-    transform: rotate(-90deg);
-}
-.tool:hover .fa-redo{
-    transform: rotate(90deg);
-}
-.tool .fa-undo{
-    transform: rotate(0deg);
-}
-.tool .fa-redo{
-    transform: rotate(0deg);
-}
+
 .tool:hover .penbar-icon{
     transform: translate(0,1vh);
 }
@@ -135,6 +124,6 @@
 .strokeslider{
     width: 50%;
 }
-#stroke{
+.stroke{
     width: 100%;
 }
