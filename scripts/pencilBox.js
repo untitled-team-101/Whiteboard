@@ -80,18 +80,19 @@ function addEraserEvents() {
     removeEvents();
     onMouseMoveEvent = function(event) {
         if (!pencilBoxVars.painting) return;
-        ctx.lineWidth = pencilBoxVars.eraserWidth;
-        ctx.strokeStyle = pencilBoxVars.backgroundColor;
-        ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
     onMouseDownEvent = function() {
         pencilBoxVars.painting = true;
-        ctx.beginPath();
         save.saveUndoState();
+        ctx.beginPath();
+        ctx.lineWidth = pencilBoxVars.eraserWidth;
+        ctx.lineCap = 'round';
+        ctx.globalCompositeOperation="destination-out";
     }
     onMouseUpEvent = function() {
+        ctx.globalCompositeOperation="source-over";
         pencilBoxVars.painting = false;
     }
     addAllEvents();
