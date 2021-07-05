@@ -1,5 +1,5 @@
-const canvas = document.querySelector('#canvas');
-const ctx = canvas.getContext('2d');
+let canvas = document.querySelector('#canvas');
+let ctx = canvas.getContext('2d');
 
 let onMouseDownEvent = null;
 let onMouseUpEvent = null;

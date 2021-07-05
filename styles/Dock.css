@@ -43,7 +43,6 @@
     height: 100%;
     width: 100%;
     border-radius: 100%;
-    background-image: radial-gradient(white, rgba(255, 255, 255, 0));
 }
 .tool *{
     transition: .2s ease;
@@ -87,8 +86,14 @@
 #text:hover div{
     animation: cursorblink .5s linear infinite;
 }
-#text:hover i{
-    animation: textblink 1s linear infinite;
+#image:hover i{
+    animation: done .9s ease infinite;
+}
+.clear{
+    animation: delete .3s ease infinite;
+}
+#shapes:hover{
+    animation: rotate 1s ease infinite;
 }
 @keyframes cursorblink {
     from{
@@ -98,7 +103,41 @@
         background-color: black;
     }
 }
+@keyframes rotate {
+    to{
+        transform: rotate(360deg);
+    }
+}
+@keyframes done {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+@keyframes delete {
+    0% {
+        /*transform: translateX(20px);*/
+    }
 
+    25% {
+        transform: rotate(-1deg);
+    }
+    50% {
+        transform: rotate(2deg);
+
+    }
+    75% {
+        transform: rotate(-2deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
 
 #penbar{
     display: none;

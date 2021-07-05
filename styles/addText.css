@@ -1,0 +1,33 @@
+.add-text-popup {
+    position: fixed;
+    background: rgba(0,0,0,0.3);
+    inset: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.add-text-popup .add-text-wrap {
+    background: white;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.add-text-popup .add-text-wrap .add-button-wrap {
+    text-align: center;
+}
+
+.add-text-popup .add-text-wrap textarea {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.add-text-popup .add-text-wrap button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: white;
+    border: 1px solid #aaa;
+    color: #888;
+}

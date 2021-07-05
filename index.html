@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Untitled WhiteBoard</title>
     <link rel="stylesheet" href="styles/style.css"/>
+    <link rel="stylesheet" href="./styles/addText.css">
     <link
             rel="stylesheet"
             href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"
@@ -12,7 +13,6 @@
     <script src="scripts/canvas.js" defer></script>
     <script src="scripts/dock.js" defer></script>
     <script src="scripts/script.js" defer></script>
-    <script src="scripts/canvas.js" defer></script>
     <script src="scripts/colorPicker.js" defer></script>
     <script src="scripts/pencilBox.js" defer></script>
     <script src="./scripts/clear-canvas.js" defer></script>
@@ -26,6 +26,7 @@
     <script src="scripts/eraserbar.js" defer></script>
     <script src="scripts/expand-menu.js" defer></script>
     <script src="./scripts/insert-image.js" defer></script>
+    <script src="./scripts/addText.js" defer></script>
 </head>
 
 <body>
@@ -41,6 +42,9 @@
     </div>
     <div class="ham-option redo" id="redo">
         <i class="fas fa-redo"></i>
+    </div>
+    <div class="ham-option download" id="download">
+        <i class="fal fa-download"></i>
     </div>
 </div>
 
@@ -165,7 +169,7 @@
         <div class="tool shape" id="shape-triangle">
             <i class="fal fa-triangle"></i>
         </div>
-        <div class="colorpicker strokebarPenOne">
+        <div class="shape tool colorpicker">
             <input class="shape" type="color" value="#333333" id="shape-color-picker">
         </div>
         <div class="tool clear shape" id="clear-canvasShapebar">
@@ -200,10 +204,13 @@
             </div>
         </div>
     </div>
-    <div class="add-page">
-        <i class="fas fa-plus"></i>&nbsp;Add Page
+
+</div>
+<div class="add-text-popup">
+    <div class="add-text-wrap">
+        <textarea id="addTextField" cols="20" rows="5"></textarea>
+        <div class="add-button-wrap"><button id="addTextButton">Add Text</button></div>
     </div>
 </div>
-
 </body>
 </html>

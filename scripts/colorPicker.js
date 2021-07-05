@@ -5,7 +5,7 @@ let colorPickerBackground = document.querySelector('#bg-color-picker');
 
 let selectedColor = '';
 let selectedPen = null;
-let color1 = 'blue';
+let color1 = 'green';
 let color2 = 'red';
 let color3 = 'black';
 let color4 = '#333333';
