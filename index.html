@@ -19,6 +19,8 @@
     <script src="scripts/drawShapes.js" defer></script>
     <script src="scripts/undoRedo.js" defer></script>
     <script src="scripts/multiboard.js" defer></script>
+    <script src="scripts/slider.js" defer></script>
+    <script src="scripts/eraserbar.js" defer></script>
 </head>
 
 <body>
@@ -105,7 +107,7 @@
             <input class="strokebarPenTwoEle" type="color" id="PenOne-color-picker" value="#333333">
         </div>
         <div class="strokeslider strokebarPenOne">
-            <input type="range" id="stroke1">
+            <input type="range" id="stroke1" value="10">
         </div>
     </div>
 
@@ -119,16 +121,18 @@
             <input class="strokebarPenTwoEle" type="color" id="PenTwo-color-picker" value="#333333">
         </div>
         <div class="strokeslider strokebarPenTwoEle">
-            <input type="range" id="stroke2">
+            <input type="range" id="stroke2" value="10">
         </div>
     </div>
 
-    <div class="bar" id="eraserbar" id="eraserbar">
+    <div class="bar eraserbar" id="eraserbar">
         <div class="tool">
-            <img src="assets/img/done.svg" class="penbar-icon" alt="done">
+            <div class="round" id="goBackEraser">
+                <img src="assets/img/done.svg" class="check" alt="done">
+            </div>
         </div>
         <div class="strokeslider">
-            <input type="range" id="erase-stroke">
+            <input type="range" id="stroke3" value="50">
         </div>
     </div>
 

@@ -6,7 +6,10 @@ let pencilBoxVars = {
     paintingColorOne : 'red',
     paintingColorTwo : 'blue',
     highlighterColor : '#00FF0004',
-    painting : false
+    painting : false,
+    penWidth1: 10,
+    penWidth2: 10,
+    eraserWidth:50
 };
 
 
@@ -15,7 +18,7 @@ function addPenOneEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
         if(!pencilBoxVars.painting) return;
-        ctx.lineWidth = 10;
+        ctx.lineWidth = pencilBoxVars.penWidth1;
         ctx.strokeStyle = pencilBoxVars.paintingColorOne;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
@@ -34,7 +37,7 @@ function addPenTwoEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
         if(!pencilBoxVars.painting) return;
-        ctx.lineWidth = 10;
+        ctx.lineWidth = pencilBoxVars.penWidth2;
         ctx.strokeStyle = pencilBoxVars.paintingColorTwo;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
@@ -54,9 +57,11 @@ function addHighlighterEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
         if(!pencilBoxVars.painting) return;
-        ctx.globalCompositeOperation = "multiply";
-        ctx.fillStyle = "#ff0";
-        ctx.fillRect(event.clientX-10, event.clientY-10, 20,20);
+        ctx.lineWidth = 30;
+        ctx.strokeStyle = 'greenyellow';
+        ctx.lineCap = 'square';
+        ctx.lineTo(event.clientX, event.clientY);
+        ctx.stroke();
     }
     onMouseDownEvent = function (){
         pencilBoxVars.painting=true;
@@ -73,7 +78,7 @@ function addEraserEvents(){
     removeEvents();
     onMouseMoveEvent = function (event){
         if(!pencilBoxVars.painting) return;
-        ctx.lineWidth = 50;
+        ctx.lineWidth = pencilBoxVars.eraserWidth;
         ctx.strokeStyle = pencilBoxVars.backgroundColor;
         ctx.lineCap = 'round';
         ctx.lineTo(event.clientX, event.clientY);
