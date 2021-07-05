@@ -4,9 +4,6 @@ let next = document.getElementById('next')
 let add = document.getElementById('add')
 let closeBtn = document.querySelector('.close-multipage')
 let multipageBar = document.querySelector('.multipage-bar')
-let thumbnail = document.querySelector('.thumbnail');
-
-thumbnail.style.backgroundColor = pencilBoxVars.backgroundColor;
 
 closeBtn.addEventListener("click", function() {
     multipageBar.classList.toggle('closed');
