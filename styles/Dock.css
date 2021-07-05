@@ -2,7 +2,7 @@
     position: absolute;
     bottom: 1vh;
     left: 30vw;
-    height: 15vh;
+    height: 10vh;
     width: 40vw;
     background-color: white;
     z-index: 1000;
@@ -10,6 +10,12 @@
     justify-content: space-evenly;
     border: 1px solid #c1c1c1;
     border-radius: 10px;
+    transition: .5s ease;
+    transform: translate(0,9.5vh);
+}
+.toolbar:hover{
+    transform: translate(0,0);
+    /*transition-delay: 1s;*/
 }
 .toolbar .bar{
     display: flex;
@@ -61,7 +67,7 @@
     transform: scale(1.5);
 }
 .penbar-icon{
-    transform: translate(0vh,4vh);
+    transform: translate(0vh,2vh);
     height: 90%;
 }
 .check{
