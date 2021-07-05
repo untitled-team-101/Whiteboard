@@ -202,7 +202,13 @@
 <div class="add-text-popup">
     <div class="add-text-wrap">
         <textarea id="addTextField" cols="20" rows="5"></textarea>
-        <div class="add-button-wrap"><button id="addTextButton">Add Text</button></div>
+        <div class="add-text-div">
+            <input type="color" id="text-color-picker" value="#ffffff"/>
+        </div>
+        <div class="add-text-div">
+            <input type="range" id="text-stroke-width" value="18" min="10" max="100"/>
+        </div>
+        <div class="add-text-div"><button id="addTextButton">Add Text</button></div>
     </div>
 </div>
 </body>

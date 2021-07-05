@@ -14,14 +14,25 @@
     border-radius: 10px;
 }
 
-.add-text-popup .add-text-wrap .add-button-wrap {
+.add-text-popup .add-text-wrap .add-text-div {
     text-align: center;
+}
+.add-text-popup .add-text-wrap .add-text-div input[type=color]{
+    min-width:50%;
+    min-height: 30px;
+    margin: 10px;
+}
+.add-text-popup .add-text-wrap .add-text-div input[type=range]{
+    width: 100%
 }
 
 .add-text-popup .add-text-wrap textarea {
     padding: 5px;
     border-radius: 5px;
     border: 1px solid #aaa;
+    font-size: 20px;
+    max-width: 70vw;
+    max-height: 50vh;
 }
 
 .add-text-popup .add-text-wrap button {
@@ -30,4 +41,5 @@
     background: white;
     border: 1px solid #aaa;
     color: #888;
+    margin: 10px;
 }
