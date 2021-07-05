@@ -114,7 +114,10 @@
 #defbar{
     display: none;
 }
-#strokebar{
+#strokebarPenOne{
+    display: none;
+}
+#strokebarPenTwo{
     display: none;
 }
 #shapebar{

@@ -1,35 +1,26 @@
-window.addEventListener('load', ()=> {
-    const canvas = document.querySelector('#canvas');
-    const ctx = canvas.getContext('2d');
+const canvas = document.querySelector('#canvas');
+const ctx = canvas.getContext('2d');
 
-    canvas.height = window.innerHeight;
-    canvas.width = window.innerWidth;
+let onMouseDownEvent = null;
+let onMouseUpEvent = null;
+let onMouseMoveEvent = null;
+let onMouseLeaveEvent = null;
+let painting = false;
 
-    let painting =false;
-    function startPosition(){
-        painting=true;
-        ctx.beginPath();
-    }
-    function finishedPosition(){
-        painting=false;
-    }
-    function draw(event){
-        if(!painting) return;
-        ctx.lineWidth = 10;
-        ctx.strokeStyle = 'blue';
-        ctx.lineCap = 'round';
-        ctx.lineTo(event.clientX, event.clientY);
-        ctx.stroke();
-    }
-    function erase(event){
-        if(!painting) return;
-        ctx.lineWidth = 30;
-        ctx.strokeStyle = 'white';
-        ctx.lineCap = 'round';
-        ctx.lineTo(event.clientX, event.clientY);
-        ctx.stroke();
-    }
-    canvas.addEventListener('mousedown', startPosition);
-    canvas.addEventListener('mouseup', finishedPosition);
-    canvas.addEventListener('mousemove', draw);
-})
+canvas.height = window.innerHeight;
+canvas.width = window.innerWidth;
+
+function removeEvents(){
+    canvas.removeEventListener('mousemove', onMouseMoveEvent);
+    canvas.removeEventListener('mousedown', onMouseDownEvent);
+    canvas.removeEventListener('mouseup', onMouseUpEvent);
+    canvas.removeEventListener("mouseleave", onMouseLeaveEvent);
+}
+
+function addAllEvents(){
+    canvas.addEventListener('mousemove', onMouseMoveEvent);
+    canvas.addEventListener('mousedown', onMouseDownEvent);
+    canvas.addEventListener('mouseup', onMouseUpEvent);
+    canvas.addEventListener("mouseleave", onMouseLeaveEvent);
+}
+
