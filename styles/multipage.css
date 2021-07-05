@@ -31,15 +31,11 @@
     font-size: 5vh;
     transition: .5s ease;
     box-shadow: 0 0 10px #000;
+    transform: rotate(180deg);
 }
 
 .close-multipage i {
     transform: rotate(180deg);
-    transition: .5s ease;
-}
-
-.close-multipage:hover i {
-    transform: rotate(0deg);
 }
 
 .thumbnail-group {
@@ -53,7 +49,7 @@
 .thumbnail {
     width: 13vw;
     height: 15vh;
-    background-color: #fff200;
+    /* background-color: #fff200; */
     overflow: hidden;
     margin: 2vh 0;
     border-radius: 10px;
@@ -94,10 +90,6 @@
 
 .closed i {
     transform: rotate(0deg);
-}
-
-.closed .close-multipage:hover i {
-    transform: rotate(180deg);
 }
 
 .add-page {
