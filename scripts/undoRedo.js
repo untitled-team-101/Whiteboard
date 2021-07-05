@@ -48,3 +48,13 @@ function redo() {
 }
 undoBtn.addEventListener('click', undo)
 redoBtn.addEventListener('click', redo)
+
+window.addEventListener("keydown", (event) => {
+    console.log(event)
+    if (event.key === "z" || event.key === "Z")
+        if (event.ctrlKey)
+            undo()
+    if (event.key === "y" || event.key === "Y")
+        if (event.ctrlKey)
+            redo()
+})
