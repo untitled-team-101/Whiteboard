@@ -2,10 +2,18 @@ let boardSection = document.querySelector('.multipage-thumbnails')
 let prev = document.getElementById('prev')
 let next = document.getElementById('next')
 let add = document.getElementById('add')
+let closeBtn = document.querySelector('.close-multipage')
+let multipageBar = document.querySelector('.multipage-bar')
+let thumbnail = document.querySelector('.thumbnail');
+
+thumbnail.style.backgroundColor = pencilBoxVars.backgroundColor;
+
+closeBtn.addEventListener("click", function() {
+    multipageBar.classList.toggle('closed');
+})
 
 let currentIndex = 0;
-let i=0;
-
+let i = 0;
 let boardStore = []
 let boardTemplate = function(board, boardUndoList, boardRedoList) {
     let boardData = {
@@ -35,27 +43,15 @@ function addBoard() {
         save.undo_list = []
         save.redo_list = []
         ctx.clearRect(0, 0, canvas.width, canvas.height)
-        let img = document.createElement('img')
-        img.src = board;
-        img.height = "100"
-        img.width = "100"
-        img.style.backgroundColor = "red"
-        boardSection.appendChild(img)
     } else {
         saveHistory();
         boardStore[currentIndex].board = canvas.toDataURL();
         currentIndex = boardStore.length
         ctx.clearRect(0, 0, canvas.width, canvas.height)
         board = canvas.toDataURL()
-        let currentBoard = boardTemplate(false, board, save.undo_list, save.redo_list)
+        let currentBoard = boardTemplate(board, save.undo_list, save.redo_list)
         save.undo_list = []
         save.redo_list = []
-        let img = document.createElement('img')
-        img.src = board;
-        img.height = "100"
-        img.width = "100"
-        img.style.backgroundColor = "red"
-        boardSection.appendChild(img)
         boardStore.push(currentBoard)
     }
     showPreview()
@@ -108,16 +104,31 @@ function nextBoard() {
 }
 
 function showPreview() {
+    let num = 0;
+    boardSection.innerHTML = "";
     for (let boardPreview of boardStore) {
-        let previewImg = document.createElement('img');
+        let thumbnail_group = document.createElement('div')
+        let number = document.createElement('div')
+        let thumbnail = document.createElement('div')
+        let previewImg = document.createElement('img')
+
+        thumbnail_group.classList.add('thumbnail-group')
+        number.classList.add('number')
+        thumbnail.classList.add('thumbnail')
+        previewImg.classList.add('thumb-img')
+
+        num += 1
+        number.innerHTML = num
+
         previewImg.src = boardPreview.board;
-        previewImg.height = "100";
-        previewImg.width = "100";
-        previewImg.style.backgroundColor = "yellow";
-        boardSection.appendChild(previewImg);
+        previewImg.style.backgroundColor = pencilBoxVars.backgroundColor;
+
+        thumbnail_group.appendChild(number)
+        thumbnail_group.appendChild(thumbnail)
+        thumbnail.appendChild(previewImg)
+        boardSection.appendChild(thumbnail_group);
     }
 }
-
 add.addEventListener("click", addBoard)
 prev.addEventListener("click", prevBoard)
 next.addEventListener("click", nextBoard)

@@ -24,106 +24,106 @@
 </head>
 
 <body>
-<canvas id="canvas"></canvas>
-<div class="toolbar">
+    <canvas id="canvas"></canvas>
+    <div class="toolbar">
 
-    <div class="bar defbar" id="defbar">
-        <div class="tool defbarEle" id="pen">
-            <i class="fas fa-pen"></i>
-        </div>
-        <div class="tool defbarEle" id="text">
-            <i class="fas fa-font"></i>
-            <div></div>
-        </div>
-        <div class="tool defbarEle" id="image">
-            <i class="fas fa-image"></i>
-        </div>
-        <div class="tool defbarEle" id="shapes">
-            <i class="far fa-shapes"></i>
-        </div>
-        <div class="tool undo defbarEle" id="undo">
-            <i class="fas fa-undo"></i>
-        </div>
-        <div class="tool redo defbarEle" id="redo">
-            <i class="fas fa-redo"></i>
-        </div>
-        <div class="tool clear penbarEle" id="clear-canvasDefbar">
-            <div class="round">
-                <i class="fas fa-trash-alt"></i>
+        <div class="bar defbar" id="defbar">
+            <div class="tool defbarEle" id="pen">
+                <i class="fas fa-pen"></i>
+            </div>
+            <div class="tool defbarEle" id="text">
+                <i class="fas fa-font"></i>
+                <div></div>
+            </div>
+            <div class="tool defbarEle" id="image">
+                <i class="fas fa-image"></i>
+            </div>
+            <div class="tool defbarEle" id="shapes">
+                <i class="far fa-shapes"></i>
+            </div>
+            <div class="tool undo defbarEle" id="undo">
+                <i class="fas fa-undo"></i>
+            </div>
+            <div class="tool redo defbarEle" id="redo">
+                <i class="fas fa-redo"></i>
+            </div>
+            <div class="tool clear penbarEle" id="clear-canvasDefbar">
+                <div class="round">
+                    <i class="fas fa-trash-alt"></i>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div class="bar penbar" id="penbar">
-        <div class="tool penbarEle" id="goBackPenbar">
-            <div class="round">
-                <img src="assets/img/done.svg" class="check" alt="done">
+        <div class="bar penbar" id="penbar">
+            <div class="tool penbarEle" id="goBackPenbar">
+                <div class="round">
+                    <img src="assets/img/done.svg" class="check" alt="done">
+                </div>
+            </div>
+            <div class="tool penbarEle" id="penOne">
+                <div class="round">
+                    <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
+                </div>
+            </div>
+            <div class="tool penbarEle" id="penTwo">
+                <div class="round">
+                    <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
+                </div>
+            </div>
+            <div class="tool penbarEle" id="highlighter">
+                <div class="round">
+                    <img src="assets/img/highlighter.svg" class="penbar-icon" alt="highlighter">
+                </div>
+            </div>
+            <div class="tool penbarEle" id="eraser">
+                <div class="round">
+                    <img src="assets/img/eraser.svg" class="penbar-icon" alt="eraser">
+                </div>
+            </div>
+            <div class="tool undo penbarEle">
+                <div class="round">
+                    <i class="fal fa-undo"></i>
+                </div>
+            </div>
+            <div class="tool redo penbarEle">
+                <div class="round">
+                    <i class="fal fa-redo"></i>
+                </div>
+            </div>
+            <div class="tool clear penbarEle" id="clear-canvasPenbar">
+                <div class="round">
+                    <i class="fal fa-times"></i>
+                </div>
             </div>
         </div>
-        <div class="tool penbarEle" id="penOne">
-            <div class="round">
-                <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
-            </div>
-        </div>
-        <div class="tool penbarEle" id="penTwo">
-            <div class="round">
-                <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
-            </div>
-        </div>
-        <div class="tool penbarEle" id="highlighter">
-            <div class="round">
-                <img src="assets/img/highlighter.svg" class="penbar-icon" alt="highlighter">
-            </div>
-        </div>
-        <div class="tool penbarEle" id="eraser">
-            <div class="round">
-                <img src="assets/img/eraser.svg" class="penbar-icon" alt="eraser">
-            </div>
-        </div>
-        <div class="tool undo penbarEle">
-            <div class="round">
-                <i class="fal fa-undo"></i>
-            </div>
-        </div>
-        <div class="tool redo penbarEle">
-            <div class="round">
-                <i class="fal fa-redo"></i>
-            </div>
-        </div>
-        <div class="tool clear penbarEle" id="clear-canvasPenbar">
-            <div class="round">
-                <i class="fal fa-times"></i>
-            </div>
-        </div>
-    </div>
 
-    <div class="bar strokebarPenOne" id="strokebarPenOne">
-        <div class="tool strokebarPenOne" id="goBackStrokePenOnebar">
-            <div class="round">
-                <img src="assets/img/done.svg" class="check" alt="done">
+        <div class="bar strokebarPenOne" id="strokebarPenOne">
+            <div class="tool strokebarPenOne" id="goBackStrokePenOnebar">
+                <div class="round">
+                    <img src="assets/img/done.svg" class="check" alt="done">
+                </div>
+            </div>
+            <div class="colorpicker strokebarPenOne">
+                <input class="strokebarPenTwoEle" type="color" id="PenOne-color-picker" value="#333333">
+            </div>
+            <div class="strokeslider strokebarPenOne">
+                <input type="range" id="stroke1" value="10">
             </div>
         </div>
-        <div class="colorpicker strokebarPenOne">
-            <input class="strokebarPenTwoEle" type="color" id="PenOne-color-picker" value="#333333">
-        </div>
-        <div class="strokeslider strokebarPenOne">
-            <input type="range" id="stroke1" value="10">
-        </div>
-    </div>
 
-    <div class="bar strokebarPenTwo" id="strokebarPenTwo">
-        <div class="tool strokebarPenTwoEle" id="goBackStrokePenTwobar">
-            <div class="round">
-                <img src="assets/img/done.svg" class="check" alt="done">
+        <div class="bar strokebarPenTwo" id="strokebarPenTwo">
+            <div class="tool strokebarPenTwoEle" id="goBackStrokePenTwobar">
+                <div class="round">
+                    <img src="assets/img/done.svg" class="check" alt="done">
+                </div>
+            </div>
+            <div class="colorpicker strokebarPenTwoEle">
+                <input class="strokebarPenTwoEle" type="color" id="PenTwo-color-picker" value="#333333">
+            </div>
+            <div class="strokeslider strokebarPenTwoEle">
+                <input type="range" id="stroke2" value="10">
             </div>
         </div>
-        <div class="colorpicker strokebarPenTwoEle">
-            <input class="strokebarPenTwoEle" type="color" id="PenTwo-color-picker" value="#333333">
-        </div>
-        <div class="strokeslider strokebarPenTwoEle">
-            <input type="range" id="stroke2" value="10">
-        </div>
-    </div>
 
     <div class="bar eraserbar" id="eraserbar">
         <div class="tool">
@@ -136,91 +136,74 @@
         </div>
     </div>
 
-    <div class="bar shapebar" id="shapebar">
-        <div class="tool shape" id="goBackShapebar">
-            <div class="round">
-                <img src="assets/img/done.svg" class="check" alt="done">
+        <div class="bar shapebar" id="shapebar">
+            <div class="tool shape" id="goBackShapebar">
+                <div class="round">
+                    <img src="assets/img/done.svg" class="check" alt="done">
+                </div>
             </div>
-        </div>
-        <div class="tool shape" id="shape-line">
-            <i class="fal fa-horizontal-rule"></i>
-        </div>
-        <div class="tool shape" id="shape-rect">
-            <i class="fal fa-rectangle-landscape"></i>
-        </div>
-        <div class="tool shape" id="shape-circle">
-            <i class="fal fa-circle"></i>
-        </div>
-        <div class="tool shape" id="shape-triangle">
-            <i class="fal fa-triangle"></i>
-        </div>
-        <div class="colorpicker strokebarPenOne">
-            <input class="shape" type="color" value="#333333" id="shape-color-picker">
-        </div>
-        <div class="tool undo shape">
-            <div class="round">
-                <i class="fal fa-undo"></i>
+            <div class="tool shape" id="shape-line">
+                <i class="fal fa-horizontal-rule"></i>
             </div>
-        </div>
-        <div class="tool redo shape">
-            <div class="round">
-                <i class="fal fa-redo"></i>
+            <div class="tool shape" id="shape-rect">
+                <i class="fal fa-rectangle-landscape"></i>
             </div>
-        </div>
-        <div class="tool clear shape" id="clear-canvasShapebar">
-            <div class="round">
-                <i class="fal fa-times"></i>
+            <div class="tool shape" id="shape-circle">
+                <i class="fal fa-circle"></i>
             </div>
-        </div>
+            <div class="tool shape" id="shape-triangle">
+                <i class="fal fa-triangle"></i>
+            </div>
+            <div class="colorpicker strokebarPenOne">
+                <input class="shape" type="color" value="#333333" id="shape-color-picker">
+            </div>
+            <div class="tool undo shape">
+                <div class="round">
+                    <i class="fal fa-undo"></i>
+                </div>
+            </div>
+            <div class="tool redo shape">
+                <div class="round">
+                    <i class="fal fa-redo"></i>
+                </div>
+            </div>
+            <div class="tool clear shape" id="clear-canvasShapebar">
+                <div class="round">
+                    <i class="fal fa-times"></i>
+                </div>
+            </div>
 
-    </div>
-</div>
-
-<div id="canvas-switch">
-    <button id="prev">PREV</button>
-    <button id="next">NEXT</button>
-    <button id="add">ADD</button>
-</div>
-
-
-<div class="multipage-bar" id="boards">
-    <div class="close-multipage">
-        <i class="fas fa-chevron-left"></i>
-    </div>
-    <div class="multipage-titlebar">
-        Multipages
-    </div>
-    <div class="multipage-thumbnails">
-        <div class="thumbnail-group">
-            <div class="number">
-                1.
-            </div>
-            <div class="thumbnail">
-                <img class="thumb-img">
-            </div>
         </div>
     </div>
-    <div class="add-page">
-        <i class="fas fa-plus"></i>&nbsp;Add Page
+
+    <div id="canvas-switch">
+        <button id="prev">PREV</button>
+        <button id="next">NEXT</button>
+        <button id="add">ADD</button>
     </div>
-</div>
 
 
-<body>
-<!--    <div id="canvas-switch">-->
-<!--        <button id="prev">PREV</button>-->
-<!--        <button id="next">NEXT</button>-->
-<!--        <button id="add">ADD</button>-->
-<!--    </div>-->
-<!--    <section id="boards">-->
-<!--    </section>-->
-<!--    <div id="canvas-container">-->
-<!--        <canvas id="canvas"></canvas>-->
-<!--    </div>-->
-<!--    <div class="toolbar">-->
-<!--        <button id="undo">undo</button>-->
-<!--        <button id="redo">redo</button>-->
-<!--    </div>-->
+    <div class="multipage-bar" id="boards">
+        <div class="close-multipage">
+            <i class="fas fa-chevron-left"></i>
+        </div>
+        <div class="multipage-titlebar">
+            Multipages
+        </div>
+        <div class="multipage-thumbnails">
+            <div class="thumbnail-group">
+                <div class="number">
+                    1
+                </div>
+                <div class="thumbnail">
+                    <img class="thumb-img">
+                </div>
+            </div>
+        </div>
+        <div class="add-page">
+            <i class="fas fa-plus"></i>&nbsp;Add Page
+        </div>
+    </div>
 </body>
 
 </html>
