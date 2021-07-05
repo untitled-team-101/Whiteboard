@@ -12,8 +12,6 @@ let pencilBoxVars = {
     eraserWidth: 50
 };
 
-
-
 function addPenOneEvents() {
     removeEvents();
     onMouseMoveEvent = function(event) {
