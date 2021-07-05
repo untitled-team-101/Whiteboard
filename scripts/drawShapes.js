@@ -152,7 +152,6 @@ function drawTriangle(event) {
 
 for (let addShapeButton of addShapeButtons) {
     addShapeButton.addEventListener("click", (event) => {
-        console.log(addShapeButton.id)
         removeEvents()
         if (addShapeButton.id === "shape-line") {
             onMouseDownEvent = setLineStart

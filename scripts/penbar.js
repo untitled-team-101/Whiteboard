@@ -18,20 +18,31 @@ function letsGoBack(gobackk,ele1,ele2) {
 }
 
 penOne.addEventListener('click', function (){
+    if (!penOne.classList.contains("selectedTool")){
+        penOne.classList.add("selectedTool")
+        removeActiveStatus()
+        activeElements.push(penOne)
+        return
+    }
     selectedPen = 1
     selectedColor = color1;
-    colorPickerPenOne.value = selectedColor;
+    // colorPickerPenOne.value = selectedColor;
     penbar.style.display = 'none';
     strokebarPenOne.style.display = 'flex';
     letsGoBack(goBackStrokeOne,penbar,strokebarPenOne);
 })
+
 penTwo.addEventListener('click', function (){
+    if (!penTwo.classList.contains("selectedTool")){
+        penTwo.classList.add("selectedTool")
+        removeActiveStatus()
+        activeElements.push(penTwo)
+        return
+    }
     selectedPen = 2;
     selectedColor = color2;
-    colorPickerPenTwo.value = selectedColor;
+    // colorPickerPenTwo.value = selectedColor;
     penbar.style.display = 'none';
     strokebarPenTwo.style.display = 'flex';
     letsGoBack(goBackStrokeTwo,penbar,strokebarPenTwo);
 })
-
-

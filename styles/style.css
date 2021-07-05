@@ -1,6 +1,7 @@
 @import url(Dock.css);
 @import url(multipage.css);
 @import url(side-btn.css);
+
 * {
     margin: 0;
     padding: 0;
@@ -14,109 +15,12 @@ body {
     background-color: #333333;
 }
 
-/*.defbar{*/
-/*    position: absolute;*/
-/*    left: 50vw;*/
-/*    bottom: 0;*/
-/*    height: 10vh;*/
-/*    z-index: 1000;*/
-/*    transform: translate(-50%,0%);*/
-/*    display: flex;*/
-/*}*/
-
-/*.defbar div{*/
-/*    cursor: pointer;*/
-/*    border: solid 5px darkred;*/
-/*    height: 10vh;*/
-/*    width: 10vh;*/
-/*}*/
-
-
-/*.penbar{*/
-/*    position: absolute;*/
-/*    left: 50vw;*/
-/*    bottom: 0;*/
-/*    height: 10vh;*/
-/*    z-index: 1000;*/
-/*    transform: translate(-50%,0%);*/
-/*    display: none;*/
-/*}*/
-
-/*.penbar div, input, button{*/
-/*    cursor: pointer;*/
-/*    border: solid 5px darkred;*/
-/*    height: 10vh;*/
-/*    width: 10vh;*/
-/*}*/
-
-/*.strokebarPenOne, .strokebarPenTwo{*/
-/*    position: absolute;*/
-/*    left: 50vw;*/
-/*    bottom: 0;*/
-/*    height: 10vh;*/
-/*    z-index: 1000;*/
-/*    transform: translate(-50%,0%);*/
-/*}*/
-/*.strokebarPenOne, .strokebarPenTwo{*/
-/*    display: none;*/
-/*}*/
-
-/*.strokebarPenOne div, .strokebarPenTwo div{*/
-/*    cursor: pointer;*/
-/*    border: solid 5px darkred;*/
-/*    height: 10vh;*/
-/*    width: 10vh;*/
-/*}*/
-
-/*#size-slider{*/
-/*    width:25vh !important;*/
-/*}*/
-
-/*.shapebar{*/
-/*    position: absolute;*/
-/*    left: 50vw;*/
-/*    bottom: 0;*/
-/*    height: 10vh;*/
-/*    z-index: 1000;*/
-/*    transform: translate(-50%,0%);*/
-/*    display: none;*/
-/*}*/
-
-/*.shapebar div, input {*/
-/*    cursor: pointer;*/
-/*    border: solid 5px darkred;*/
-/*    height: 10vh;*/
-/*    width: 10vh;*/
-/*}*/
-/*.toolbar {*/
-/*    position: absolute;*/
-/*    bottom: 0;*/
-/*    left: 35vw;*/
-/*    height: 10vh;*/
-/*    width: 30vw;*/
-/*    background-color: black;*/
-/*    z-index: 1000;*/
-/*}*/
-
 #canvas-switch {
     position: absolute;
     left: 50vw;
     top:0;
     height: 1vh;
 }
-
-/*#boards {*/
-/*    position: absolute;*/
-/*    left: 0;*/
-/*    height: 100vh;*/
-/*    width: 15vw;*/
-/*    background-color: gray;*/
-/*    overflow-y: scroll;*/
-/*}*/
-/*.board{*/
-/*    margin: 40px;*/
-/*}*/
-
 
 #fileinput{
     display: none;

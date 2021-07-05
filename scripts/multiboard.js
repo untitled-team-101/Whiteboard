@@ -4,9 +4,6 @@ let next = document.getElementById('next')
 let add = document.getElementById('add')
 let closeBtn = document.querySelector('.close-multipage')
 let multipageBar = document.querySelector('.multipage-bar')
-let thumbnail = document.querySelector('.thumbnail');
-
-thumbnail.style.backgroundColor = pencilBoxVars.backgroundColor;
 
 closeBtn.addEventListener("click", function() {
     multipageBar.classList.toggle('closed');
@@ -16,12 +13,11 @@ let currentIndex = 0;
 let i = 0;
 let boardStore = []
 let boardTemplate = function(board, boardUndoList, boardRedoList) {
-    let boardData = {
+    return {
         board,
         boardUndoList,
         boardRedoList
     }
-    return boardData
 }
 
 function loadHistory() {
@@ -78,6 +74,7 @@ function prevBoard() {
         currImg.onload = function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             ctx.drawImage(currImg, 0, 0)
+            checkBoardRequest()
         }
         loadHistory();
     }
@@ -97,15 +94,30 @@ function nextBoard() {
         currImg.onload = function() {
             ctx.clearRect(0, 0, canvas.width, canvas.height)
             ctx.drawImage(currImg, 0, 0)
+            checkBoardRequest()
         }
         loadHistory();
     }
     showPreview();
 }
 
+let requestedBoard = 0
+let requestingBoard = false
+function checkBoardRequest(){
+    if (!requestingBoard)
+        return
+    if (currentIndex < requestedBoard)
+        nextBoard()
+    else if (currentIndex > requestedBoard)
+        prevBoard()
+    else
+        requestingBoard = false
+}
+
 function showPreview() {
     let num = 0;
     boardSection.innerHTML = "";
+    let prewiewIndex = 0
     for (let boardPreview of boardStore) {
         let thumbnail_group = document.createElement('div')
         let number = document.createElement('div')
@@ -123,10 +135,19 @@ function showPreview() {
         previewImg.src = boardPreview.board;
         previewImg.style.backgroundColor = pencilBoxVars.backgroundColor;
 
+        thumbnail.thumbIndex = prewiewIndex
+        thumbnail.onclick = function (){
+            requestingBoard = true
+            requestedBoard = thumbnail.thumbIndex
+            checkBoardRequest()
+            console.log("t clicked")
+        }
+
         thumbnail_group.appendChild(number)
         thumbnail_group.appendChild(thumbnail)
         thumbnail.appendChild(previewImg)
         boardSection.appendChild(thumbnail_group);
+        prewiewIndex++
     }
 }
 add.addEventListener("click", addBoard)

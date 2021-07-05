@@ -64,5 +64,4 @@ document.querySelector("#download")
         link.download = 'untitled.png';
         link.href = document.getElementById('canvas').toDataURL()
         link.click();
-        link.outerHTML = ""
     })
