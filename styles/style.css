@@ -117,3 +117,7 @@ body {
 /*    margin: 40px;*/
 /*}*/
 
+
+#fileinput{
+    display: none;
+}
