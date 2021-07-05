@@ -2,7 +2,7 @@
 
 ## The Whiteoard app you were waiting for
   - This app is made with HTML Canvas, CSS3 and JavaScript
-#### [Try Whiteboard](https://untitled-team-101.github.io/Bricks-Breaker/)
+#### [Try Whiteboard](https://untitled-team-101.github.io/Whiteboard/)
 
 ## Screenshots
 ![screenshot 1](https://raw.githubusercontent.com/untitled-team-101/Bricks-Breaker/main/assets/screenshots/ss1.png)
@@ -12,7 +12,7 @@
 ![screenshot 5](https://raw.githubusercontent.com/untitled-team-101/Bricks-Breaker/main/assets/screenshots/ss5.png)
 
 ## Demo
-[Demo Video](https://drive.google.com/file/d/1REvxDIAToVZe9XrFpBQAhUiHMTI60oK6/view?usp=sharing)
+[Demo Video](https://drive.google.com/file/d/1pHFSM7wNHZyR-kEhiM7lWqcmrSjL07iA/view?usp=sharing)
 
 ## Contributors
 - [Ayan Dhara](https://github.com/Ayan-Dhara)
