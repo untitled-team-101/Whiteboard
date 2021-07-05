@@ -82,29 +82,14 @@
                 <img src="assets/img/pen.svg" class="penbar-icon" alt="pen">
             </div>
         </div>
-        <div class="tool penbarEle" id="highlighter">
-            <div class="round">
-                <img src="assets/img/highlighter.svg" class="penbar-icon" alt="highlighter">
-            </div>
-        </div>
         <div class="tool penbarEle" id="eraser">
             <div class="round">
                 <img src="assets/img/eraser.svg" class="penbar-icon" alt="eraser">
             </div>
         </div>
-        <div class="tool undo penbarEle">
-            <div class="round">
-                <i class="fal fa-undo"></i>
-            </div>
-        </div>
-        <div class="tool redo penbarEle">
-            <div class="round">
-                <i class="fal fa-redo"></i>
-            </div>
-        </div>
         <div class="tool clear penbarEle" id="clear-canvasPenbar">
             <div class="round">
-                <i class="fal fa-times"></i>
+                <i class="fal fa-trash-alt"></i>
             </div>
         </div>
     </div>
@@ -119,7 +104,7 @@
             <input class="strokebarPenTwoEle" type="color" id="PenOne-color-picker" value="#333333">
         </div>
         <div class="strokeslider strokebarPenOne">
-            <input type="range" id="stroke1">
+            <input type="range" class="stroke" id="stroke1">
         </div>
     </div>
 
@@ -133,16 +118,16 @@
             <input class="strokebarPenTwoEle" type="color" id="PenTwo-color-picker" value="#333333">
         </div>
         <div class="strokeslider strokebarPenTwoEle">
-            <input type="range" id="stroke2">
+            <input type="range" class="stroke" id="stroke2">
         </div>
     </div>
 
     <div class="bar" id="eraserbar">
         <div class="tool">
-            <img src="assets/img/done.svg" class="penbar-icon" alt="done">
+            <img src="assets/img/done.svg" class="check" alt="done">
         </div>
         <div class="strokeslider">
-            <input type="range" id="erase-stroke">
+            <input type="range" class="stroke" id="erase-stroke">
         </div>
     </div>
 
@@ -167,27 +152,26 @@
         <div class="colorpicker strokebarPenOne">
             <input class="shape" type="color" value="#333333" id="shape-color-picker">
         </div>
-        <div class="tool undo shape">
-            <div class="round">
-                <i class="fal fa-undo"></i>
-            </div>
-        </div>
-        <div class="tool redo shape">
-            <div class="round">
-                <i class="fal fa-redo"></i>
-            </div>
-        </div>
         <div class="tool clear shape" id="clear-canvasShapebar">
             <div class="round">
-                <i class="fal fa-times"></i>
+                <i class="fal fa-trash-alt"></i>
             </div>
         </div>
 
     </div>
 </div>
 <div class="multipage-bar" id="boards">
+    <div class="showonexpand" id="prev">
+        <i class="fas fa-chevron-double-up"></i>
+    </div>
     <div class="close-multipage">
         <i class="fas fa-chevron-left"></i>
+    </div>
+    <div class="showonexpand" id="add">
+        <i class="fas fa-plus"></i>
+    </div>
+    <div class="showonexpand" id="next">
+    <i class="fas fa-chevron-double-down"></i>
     </div>
     <div class="multipage-titlebar">
         Multipages

@@ -32,12 +32,59 @@
     transition: .5s ease;
     box-shadow: 0 0 10px #000;
 }
-.close-multipage i{
-    transform: rotate(180deg);
+#prev{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+    position: absolute;
+    right: -3.5vh;
+    height: 7vh;
+    width: 7vh;
+    background-color: #ffffff;
+    border-radius: 100%;
+    top: 20vh;
+    font-size: 3vh;
     transition: .5s ease;
+    box-shadow: 0 0 10px #000;
+}
+#next{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #333333;
+     position: absolute;
+     right: -3.5vh;
+     height: 7vh;
+     width: 7vh;
+     background-color: #ffffff;
+     border-radius: 100%;
+     top: 80vh;
+     font-size: 3vh;
+     transition: .5s ease;
+     box-shadow: 0 0 10px #000;
+ }
+#add{
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     color: #333333;
+     position: absolute;
+     right: -3.5vh;
+     height: 7vh;
+     width: 7vh;
+     background-color: #ffffff;
+     border-radius: 100%;
+     top: 60vh;
+     font-size: 3vh;
+     transition: .5s ease;
+     box-shadow: 0 0 10px #000;
+ }
+
+.close-multipage i{
+        transition: .5s ease;
 }
 .close-multipage:hover i{
-    transform: rotate(0deg);
 }
 .thumbnail-group{
     display: flex;
@@ -83,10 +130,13 @@
     transform: translate(-19vw,0);
 }
 .closed i{
+    transform: rotate(180deg);
+}
+.closed .showonexpand i{
     transform: rotate(0deg);
 }
-.closed .close-multipage:hover i{
-    transform: rotate(180deg);
+.closed .showonexpand{
+    display: none !important;
 }
 
 .add-page{
