@@ -132,7 +132,7 @@
     align-items: center;
     width: 20vw;
     height: 90vh;
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 .closed {
@@ -189,3 +189,5 @@
     font-size: 3vh;
     font-family: Ubuntu, sans-serif;
 }
+
+

@@ -13,6 +13,7 @@ addTextToolButton.addEventListener("click", ()=>{
 function addTextToCanvas(){
     let text = addTextField.value
     function addText(event) {
+        save.saveUndoState();
         ctx.font = "40px 'Montserrat'";
         ctx.fillText(text, event.clientX, event.clientY)
         canvas.removeEventListener("click", addText)
