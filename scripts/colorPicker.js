@@ -42,11 +42,17 @@ function drawPen() {
         color1 = colorPickerPenOne.value;
         selectedColor = color1;
         pencilBoxVars.paintingColorOne = selectedColor;
+        for(let svgElement of document.querySelectorAll(".pen-svg-1-col")){
+            svgElement.style.fill = selectedColor
+        }
     }
     else if(selectedPen === 2) {
         color2 = colorPickerPenTwo.value;
         selectedColor = color2;
         pencilBoxVars.paintingColorTwo = selectedColor;
+        for(let svgElement of document.querySelectorAll(".pen-svg-2-col")){
+            svgElement.style.fill = selectedColor
+        }
     }
     else if(selectedPen === 3) {
         color3 = colorPickerShape.value;

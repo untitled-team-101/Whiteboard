@@ -26,7 +26,7 @@ penOne.addEventListener('click', function (){
     }
     selectedPen = 1
     selectedColor = color1;
-    colorPickerPenOne.value = selectedColor;
+    // colorPickerPenOne.value = selectedColor;
     penbar.style.display = 'none';
     strokebarPenOne.style.display = 'flex';
     letsGoBack(goBackStrokeOne,penbar,strokebarPenOne);
@@ -41,7 +41,7 @@ penTwo.addEventListener('click', function (){
     }
     selectedPen = 2;
     selectedColor = color2;
-    colorPickerPenTwo.value = selectedColor;
+    // colorPickerPenTwo.value = selectedColor;
     penbar.style.display = 'none';
     strokebarPenTwo.style.display = 'flex';
     letsGoBack(goBackStrokeTwo,penbar,strokebarPenTwo);

@@ -99,7 +99,6 @@ function addEraserEvents() {
 
 for (let ele of penBoxEle) {
     ele.addEventListener('click', function() {
-        console.log(ele.id)
         if (ele.id === 'penOne') {
             addPenOneEvents();
         } else if (ele.id === 'penTwo') {
