@@ -35,13 +35,16 @@
         <i class="fas fa-bars"></i>
     </div>
     <div class="ham-option bg-color">
-        <input type="color"/>
+        <input type="color" id="bg-color-picker"/>
     </div>
     <div class="ham-option undo" id="undo">
         <i class="fas fa-undo"></i>
     </div>
     <div class="ham-option redo" id="redo">
         <i class="fas fa-redo"></i>
+    </div>
+    <div class="ham-option download" id="download">
+        <i class="fal fa-download"></i>
     </div>
 </div>
 
@@ -166,7 +169,7 @@
         <div class="tool shape" id="shape-triangle">
             <i class="fal fa-triangle"></i>
         </div>
-        <div class="colorpicker strokebarPenOne">
+        <div class="shape tool colorpicker">
             <input class="shape" type="color" value="#333333" id="shape-color-picker">
         </div>
         <div class="tool clear shape" id="clear-canvasShapebar">
@@ -201,9 +204,7 @@
             </div>
         </div>
     </div>
-    <div class="add-page">
-        <i class="fas fa-plus"></i>&nbsp;Add Page
-    </div>
+
 </div>
 <div class="add-text-popup">
     <div class="add-text-wrap">

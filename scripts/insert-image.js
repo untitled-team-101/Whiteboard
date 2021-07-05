@@ -48,11 +48,10 @@ window.addEventListener('load', ()=> {
                         canvas.removeEventListener('click', imgDrawListener);
                     }
                     canvas.addEventListener('click', imgDrawListener)
-                    
                 }
             }
             reader.readAsDataURL(file);
-
+            save.saveUndoState();
         }
     }
 
