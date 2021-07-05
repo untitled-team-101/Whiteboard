@@ -1,7 +1,8 @@
 let expandBtn = document.querySelector(".hamburger");
 let canvasArea = document.getElementById("canvas");
-let fullscreenBtn = document.documentElement;
-let fullscreenIcon = document.querySelector(".fas-icon-change");
+let fullscreen = document.documentElement;
+let fullscreenBtn = document.querySelector(".full-screen");
+let fullscreenIcon = document.querySelector(".fa-expand-alt");
 
 function expandMenu() {
   this.classList.add("expanded");
@@ -16,12 +17,12 @@ function toggleFullscreen() {
 }
 
 function openFullscreen() {
-  if (fullscreenBtn.requestFullscreen) {
-    fullscreenBtn.requestFullscreen();
-  } else if (fullscreenBtn.webkitRequestFullscreen) {
-    fullscreenBtn.webkitRequestFullscreen();
-  } else if (fullscreenBtn.msRequestFullscreen) {
-    fullscreenBtn.msRequestFullscreen();
+  if (fullscreen.requestFullscreen) {
+    fullscreen.requestFullscreen();
+  } else if (fullscreen.webkitRequestFullscreen) {
+    fullscreen.webkitRequestFullscreen();
+  } else if (fullscreen.msRequestFullscreen) {
+    fullscreen.msRequestFullscreen();
   }
 }
 
@@ -36,17 +37,17 @@ function closeFullscreen() {
 }
 
 function changeIcon() {
-  if (this.classList.contains("fa-expand-alt")) {
+  if (fullscreenIcon.classList.contains("fa-expand-alt")) {
     openFullscreen();
-    this.classList.remove("fa-expand-alt");
-    this.classList.add("fa-compress-alt");
+    fullscreenIcon.classList.remove("fa-expand-alt");
+    fullscreenIcon.classList.add("fa-compress-alt");
   } else {
     closeFullscreen();
-    this.classList.add("fa-expand-alt");
-    this.classList.remove("fa-compress-alt");
+    fullscreenIcon.classList.add("fa-expand-alt");
+    fullscreenIcon.classList.remove("fa-compress-alt");
   }
 }
 
 expandBtn.addEventListener("click", expandMenu);
 canvasArea.addEventListener("click", closeMenu);
-fullscreenIcon.addEventListener("click", changeIcon);
+fullscreenBtn.addEventListener("click", changeIcon);
