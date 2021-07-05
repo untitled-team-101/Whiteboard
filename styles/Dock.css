@@ -75,24 +75,24 @@
 }
 
 
-.pen:hover .fa-pen{
+#pen:hover .fa-pen{
     transform: rotate(-25deg);
 }
-.text {
+#text {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.text div{
+#text div{
     width: 1px;
     height: 5vh;
     background-color: black;
 }
-.text:hover div{
+#text:hover div{
     animation: cursorblink .5s linear infinite;
 }
-.text:hover i{
+#text:hover i{
     animation: textblink 1s linear infinite;
 }
 @keyframes cursorblink {
@@ -106,13 +106,13 @@
 
 
 #penbar{
-    /*display: none;*/
+    display: none;
     overflow: hidden;
     /*background: rgb(255,0,236);*/
     /*background: linear-gradient(196deg, rgba(255,0,236,1) 0%, rgba(120,0,255,1) 100%);*/
 }
 #defbar{
-    display: none;
+    /*display: none;*/
 }
 #strokebarPenOne{
     display: none;

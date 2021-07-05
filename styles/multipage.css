@@ -1,0 +1,76 @@
+.multipage-bar{
+    border: 1px solid red;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    width: 20vw;
+    z-index: 100;
+    background-color: red;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    transition: 1s ease;
+}
+.close-multipage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #333333;
+    position: absolute;
+    right: -5vh;
+    height: 10vh;
+    width: 10vh;
+    background-color: aqua;
+    border-radius: 100%;
+    top: 40vh;
+    font-size: 5vh;
+    transition: .5s ease;
+}
+.close-multipage i{
+    transform: rotate(180deg);
+    transition: .5s ease;
+}
+.close-multipage:hover i{
+    transform: rotate(0deg);
+}
+.thumbnail-group{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15vw;
+    color: #333333;
+}
+.thumbnail{
+    width: 13vw;
+    height: 15vh;
+    background-color: aqua;
+    margin: 2vh 0;
+}
+.multipage-titlebar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20vw;
+    height: 10vh;
+    margin-top: -1vh;
+    background-color: #5a5a5a;
+}
+.multipage-thumbnails{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20vw;
+    height: 90vh;
+    overflow-y: scroll;
+}
+.closed{
+    transform: translate(-19vw,0);
+}
+.closed i{
+    transform: rotate(0deg);
+}
+.closed .close-multipage:hover i{
+    transform: rotate(180deg);
+}
