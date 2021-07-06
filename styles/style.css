@@ -29,3 +29,26 @@ body {
 .selectedTool {
     background: rgba(0,0,0,0.1);
 }
+
+.tooltip {
+    position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 1vh;
+    top: 0;
+    transform: translateY(-120%);
+    /* Position the tooltip */
+    font-size: 2vh;
+    position: absolute;
+    z-index: 1;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: unset;
+}

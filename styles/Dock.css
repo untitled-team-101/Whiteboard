@@ -1,6 +1,6 @@
 .toolbar {
     position: absolute;
-    bottom: 1vh;
+    bottom: 1.2vh;
     left: 30vw;
     height: 10vh;
     width: 40vw;
@@ -11,11 +11,13 @@
     border: 1px solid #c1c1c1;
     border-radius: 10px;
     transition: .5s ease;
-    transform: translate(0,9.5vh);
+    transform: translate(0,0vh);
+    transition-delay: 2s;
+
 }
 .toolbar:hover{
     transform: translate(0,0);
-    /*transition-delay: 1s;*/
+    transition-delay: 0s;
 }
 .toolbar .bar{
     display: flex;

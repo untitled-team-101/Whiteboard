@@ -51,34 +51,43 @@
 <canvas id="canvas"></canvas>
 <div class="toolbar">
     <div class="bar defbar" id="defbar">
-        <div class="tool defbarEle" id="pen">
+
+        <div class="tool tooltip defbarEle" id="pen">
             <i class="fas fa-pen"></i>
+            <span class="tooltiptext">Pen Palette</span>
         </div>
-        <div class="tool defbarEle" id="text">
+        <div class="tool tooltip defbarEle" id="text">
             <i class="fas fa-font"></i>
             <div></div>
+            <span class="tooltiptext">Insert Text</span>
         </div>
-        <div class="tool defbarEle" id="image">
+        <div class="tool tooltip defbarEle" id="image">
             <i class="fas fa-image"></i>
             <input type="file" id="fileinput" accept = "image/*">
+            <span class="tooltiptext">Insert Image</span>
         </div>
-        <div class="tool defbarEle" id="shapes">
+        <div class="tool defbarEle tooltip" id="shapes">
             <i class="far fa-shapes"></i>
+            <span class="tooltiptext">Shape Palette</span>
         </div>
-        <div class="tool clear defbarEle" id="clear-canvasDefbar">
+        <div class="tool clear defbarEle tooltip" id="clear-canvasDefbar">
             <div class="round">
                 <i class="fas fa-trash-alt"></i>
             </div>
+            <span class="tooltiptext">Clear All</span>
         </div>
     </div>
 
-    <div class="bar penbar" id="penbar">
+    <div class="bar penbar tooltip" id="penbar">
+
         <div class="tool penbarEle" id="goBackPenbar">
             <div class="round">
                 <img src="assets/img/done.svg" class="check" alt="done">
             </div>
+            <span class="tooltiptext">Increase Pen Size</span>
         </div>
-        <div class="tool penbarEle" id="penOne">
+
+        <div class="tool penbarEle tooltip" id="penOne">
             <div class="round">
                 <svg class="penbar-icon" viewBox="0 0 24 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1 48L0 92H23.965L23 48H1Z" fill="red" class="pen-svg-1-col"/>
@@ -89,6 +98,7 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.747 42H23L21.606 40.312C21.5281 40.2184 21.4306 40.1432 21.3203 40.0917C21.21 40.0402 21.0897 40.0137 20.968 40.014H17.55L17.532 40H17.471L15.958 40.014H15.828C15.821 40.009 15.815 40.004 15.807 40H12.673L10.933 40.014L10.935 40.015L8.567 40.027C8.567 40.027 2.865 40.021 2.807 40.033C2.64386 40.0812 2.49961 40.1786 2.394 40.312L1 42H11.747ZM10.536 1C10.536 0.448 10.989 0 11.548 0C12.107 0 12.56 0.448 12.56 1C12.56 1.552 12.107 2 11.548 2C10.988 2 10.536 1.552 10.536 1" fill="black"/>
                 </svg>
             </div>
+            <span class="tooltiptext">Select One</span>
         </div>
         <div class="tool penbarEle" id="penTwo">
             <div class="round">
@@ -120,68 +130,83 @@
     </div>
 
     <div class="bar strokebarPenOne" id="strokebarPenOne">
-        <div class="tool strokebarPenOne" id="goBackStrokePenOnebar">
+        <div class="tool strokebarPenOne tooltip" id="goBackStrokePenOnebar">
             <div class="round">
                 <img src="assets/img/done.svg" class="check" alt="done">
             </div>
+            <span class="tooltiptext">Go Back</span>
         </div>
-        <div class="colorpicker strokebarPenOne">
+        <div class="colorpicker strokebarPenOne tooltip">
             <input class="strokebarPenTwoEle" type="color" id="PenOne-color-picker" value="#ff0000">
+            <span class="tooltiptext">Color Picker</span>
         </div>
-        <div class="strokeslider strokebarPenOne">
+        <div class="strokeslider strokebarPenOne tooltip">
             <input type="range" class="stroke" id="stroke1" value="10">
+            <span class="tooltiptext">Increase Pen Size</span>
         </div>
     </div>
 
     <div class="bar strokebarPenTwo" id="strokebarPenTwo">
-        <div class="tool strokebarPenTwoEle" id="goBackStrokePenTwobar">
+        <div class="tool strokebarPenTwoEle tooltip" id="goBackStrokePenTwobar">
             <div class="round">
                 <img src="assets/img/done.svg" class="check" alt="done">
             </div>
+            <span class="tooltiptext">Go Back</span>
         </div>
-        <div class="colorpicker strokebarPenTwoEle">
+        <div class="colorpicker strokebarPenTwoEle tooltip">
             <input class="strokebarPenTwoEle" type="color" id="PenTwo-color-picker" value="#0000ff">
+            <span class="tooltiptext">Color Picker</span>
         </div>
-        <div class="strokeslider strokebarPenTwoEle">
+        <div class="strokeslider strokebarPenTwoEle tooltip">
             <input type="range" class="stroke" id="stroke2" value="10">
+            <span class="tooltiptext">Increase Pen Size</span>
         </div>
     </div>
 
     <div class="bar eraserbar" id="eraserbar">
-        <div class="tool">
+        <div class="tool tooltip">
             <div class="round" id="goBackEraser">
                 <img src="assets/img/done.svg" class="check" alt="done">
             </div>
+            <span class="tooltiptext">Go Back</span>
         </div>
-        <div class="strokeslider">
+        <div class="strokeslider tooltip">
             <input type="range" class="stroke" id="stroke3" value="50">
+            <span class="tooltiptext">Increase Eraser Size</span>
         </div>
     </div>
 
     <div class="bar shapebar" id="shapebar">
-        <div class="tool shape" id="goBackShapebar">
+        <div class="tool shape tooltip" id="goBackShapebar">
             <div class="round">
                 <img src="assets/img/done.svg" class="check" alt="done">
             </div>
+            <span class="tooltiptext">Go Back</span>
         </div>
-        <div class="tool shape" id="shape-line">
+        <div class="tool shape tooltip" id="shape-line">
             <i class="fal fa-horizontal-rule"></i>
+            <span class="tooltiptext">Insert Line</span>
         </div>
-        <div class="tool shape" id="shape-rect">
+        <div class="tool shape tooltip" id="shape-rect">
             <i class="fal fa-rectangle-landscape"></i>
+            <span class="tooltiptext">Insert Rectangle</span>
         </div>
-        <div class="tool shape" id="shape-circle">
+        <div class="tool shape tooltip" id="shape-circle">
             <i class="fal fa-circle"></i>
+            <span class="tooltiptext">Insert Circle</span>
         </div>
-        <div class="tool shape" id="shape-triangle">
+        <div class="tool shape tooltip" id="shape-triangle">
             <i class="fal fa-triangle"></i>
+            <span class="tooltiptext">Insert Triangle</span>
         </div>
-        <div class="shape tool colorpicker">
+        <div class="shape tool colorpicker tooltip">
             <input class="shape" type="color" value="#333333" id="shape-color-picker">
+            <span class="tooltiptext">Color Picker</span>
         </div>
-        <div class="tool clear shape" id="clear-canvasShapebar">
+        <div class="tool clear shape tooltip" id="clear-canvasShapebar">
             <div class="round">
                 <i class="fal fa-trash-alt"></i>
+                <span class="tooltiptext">Clear All</span>
             </div>
         </div>
     </div>
