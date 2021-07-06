@@ -78,13 +78,13 @@
         </div>
     </div>
 
-    <div class="bar penbar tooltip" id="penbar">
+    <div class="bar penbar" id="penbar">
 
-        <div class="tool penbarEle" id="goBackPenbar">
+        <div class="tool penbarEle tooltip" id="goBackPenbar">
             <div class="round">
                 <img src="assets/img/done.svg" class="check" alt="done">
             </div>
-            <span class="tooltiptext">Increase Pen Size</span>
+            <span class="tooltiptext" id="tipBack">Go Back</span>
         </div>
 
         <div class="tool penbarEle tooltip" id="penOne">
@@ -98,9 +98,9 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.747 42H23L21.606 40.312C21.5281 40.2184 21.4306 40.1432 21.3203 40.0917C21.21 40.0402 21.0897 40.0137 20.968 40.014H17.55L17.532 40H17.471L15.958 40.014H15.828C15.821 40.009 15.815 40.004 15.807 40H12.673L10.933 40.014L10.935 40.015L8.567 40.027C8.567 40.027 2.865 40.021 2.807 40.033C2.64386 40.0812 2.49961 40.1786 2.394 40.312L1 42H11.747ZM10.536 1C10.536 0.448 10.989 0 11.548 0C12.107 0 12.56 0.448 12.56 1C12.56 1.552 12.107 2 11.548 2C10.988 2 10.536 1.552 10.536 1" fill="black"/>
                 </svg>
             </div>
-            <span class="tooltiptext">Select One</span>
+            <span class="tooltiptext" id="tipPen1">Select Pen</span>
         </div>
-        <div class="tool penbarEle" id="penTwo">
+        <div class="tool penbarEle tooltip" id="penTwo">
             <div class="round">
                 <svg class="penbar-icon" viewBox="0 0 24 92" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M1 48L0 92H23.965L23 48H1Z" fill="blue" class="pen-svg-2-col"/>
@@ -111,21 +111,25 @@
                     <path fill-rule="evenodd" clip-rule="evenodd" d="M11.747 42H23L21.606 40.312C21.5281 40.2184 21.4306 40.1432 21.3203 40.0917C21.21 40.0402 21.0897 40.0137 20.968 40.014H17.55L17.532 40H17.471L15.958 40.014H15.828C15.821 40.009 15.815 40.004 15.807 40H12.673L10.933 40.014L10.935 40.015L8.567 40.027C8.567 40.027 2.865 40.021 2.807 40.033C2.64386 40.0812 2.49961 40.1786 2.394 40.312L1 42H11.747ZM10.536 1C10.536 0.448 10.989 0 11.548 0C12.107 0 12.56 0.448 12.56 1C12.56 1.552 12.107 2 11.548 2C10.988 2 10.536 1.552 10.536 1" fill="black"/>
                 </svg>
             </div>
+            <span class="tooltiptext" id="tipPen2">Select Pen</span>
         </div>
-        <div class="tool penbarEle" id="highlighter">
+        <div class="tool penbarEle tooltip" id="highlighter">
             <div class="round">
                 <img src="assets/img/highlighter.svg" class="penbar-icon" alt="highlighter">
             </div>
+            <span class="tooltiptext" id="tipHighlighter">Select Highlighter</span>
         </div>
-        <div class="tool penbarEle" id="eraser">
+        <div class="tool penbarEle tooltip" id="eraser">
             <div class="round">
                 <img src="assets/img/eraser.svg" class="penbar-icon" alt="eraser"/>
             </div>
+            <span class="tooltiptext" id="tipEraser">Select Eraser</span>
         </div>
-        <div class="tool clear penbarEle" id="clear-canvasPenbar">
+        <div class="tool clear penbarEle tooltip" id="clear-canvasPenbar">
             <div class="round">
                 <i class="fal fa-trash-alt"></i>
             </div>
+            <span class="tooltiptext" id="tipClear">Clear All</span>
         </div>
     </div>
 

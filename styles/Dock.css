@@ -1,6 +1,6 @@
 .toolbar {
     position: absolute;
-    bottom: 1.2vh;
+    bottom: 0;
     left: 30vw;
     height: 10vh;
     width: 40vw;
@@ -11,7 +11,7 @@
     border: 1px solid #c1c1c1;
     border-radius: 10px;
     transition: .5s ease;
-    transform: translate(0,0vh);
+    transform: translate(0,9vh);
     transition-delay: 2s;
 
 }
@@ -143,7 +143,7 @@
 
 #penbar{
     display: none;
-    overflow: hidden;
+    /*overflow: hidden;*/
     /*background: rgb(255,0,236);*/
     /*background: linear-gradient(196deg, rgba(255,0,236,1) 0%, rgba(120,0,255,1) 100%);*/
 }

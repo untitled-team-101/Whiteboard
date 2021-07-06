@@ -7,9 +7,9 @@ image.addEventListener('click', function (){
 
 let activeElements = []
 
-function removeActiveStatus(){
+function removeActiveStatus(text){
     for(let activeElement of activeElements){
-        activeElement.classList.remove("selectedTool")
+        activeElement.classList.remove("selectedTool");
     }
     activeElements = []
 }
