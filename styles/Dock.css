@@ -64,7 +64,7 @@
     transform: scale(1);
 }
 .selected{
-
+    background-color: red;
 }
 .selected:hover{
     transform: none;

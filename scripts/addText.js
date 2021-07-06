@@ -3,11 +3,16 @@ let addTextToolButton = document.querySelector("#text")
 let addTextField = document.querySelector("#addTextField")
 let addTextButton = document.querySelector("#addTextButton")
 let addTextPopUP = document.querySelector(".add-text-popup")
+let cancelTextButton = document.querySelector('#cancelTextButton')
 
 addTextButton.addEventListener("click", addTextToCanvas)
 addTextToolButton.addEventListener("click", ()=>{
     addTextPopUP.style.display = "flex"
     addTextField.value = ""
+})
+
+cancelTextButton.addEventListener('click', function (){
+    addTextPopUP.style.display = 'none';
 })
 
 let addTextVars = {

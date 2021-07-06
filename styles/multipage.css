@@ -30,11 +30,15 @@
     font-size: 5vh;
     transition: .5s ease;
     box-shadow: 0 0 10px #000;
+    /*transform: rotate(180deg);*/
+}
+
+.closed .close-multipage i{
     transform: rotate(180deg);
 }
 
 .close-multipage i {
-    transform: rotate(180deg);
+    /*transform: rotate(180deg);*/
 }
 #prev{
     display: flex;

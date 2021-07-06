@@ -1,6 +1,5 @@
+"use strict"
 let boardSection = document.querySelector('.multipage-thumbnails')
-let prev = document.getElementById('prev')
-let next = document.getElementById('next')
 let add = document.getElementById('add')
 let closeBtn = document.querySelector('.close-multipage')
 let multipageBar = document.querySelector('.multipage-bar')
@@ -53,53 +52,7 @@ function addBoard() {
     showPreview()
 }
 
-function prevBoard() {
-    if (currentIndex === 0) {
-        window.alert("ANDHE PEECHE KOI BOARD NAHI HAI !!")
-    } else {
-        if (currentIndex === boardStore.length) {
-            let temp = [save.undo_list, save.redo_list];
-            addBoard()
-            save.undo_list = temp[0]
-            save.redo_list = temp[1]
-            currentIndex -= 1
-        } else {
-            boardStore[currentIndex].board = canvas.toDataURL()
-        }
-        saveHistory();
-        currentIndex -= 1
-        let previousState = boardStore[currentIndex].board
-        let currImg = document.createElement('img')
-        currImg.src = previousState
-        currImg.onload = function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-            ctx.drawImage(currImg, 0, 0)
-            checkBoardRequest()
-        }
-        loadHistory();
-    }
-    showPreview();
-}
 
-function nextBoard() {
-    if (currentIndex >= boardStore.length - 1) {
-        window.alert("ANDHE AAGE KOI BOARD NAHI HAI !!")
-    } else {
-        saveHistory();
-        currentIndex += 1;
-        boardStore[currentIndex - 1].board = canvas.toDataURL()
-        let nextState = boardStore[currentIndex].board
-        let currImg = document.createElement('img')
-        currImg.src = nextState
-        currImg.onload = function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-            ctx.drawImage(currImg, 0, 0)
-            checkBoardRequest()
-        }
-        loadHistory();
-    }
-    showPreview();
-}
 
 let requestedBoard = 0
 let requestingBoard = false
@@ -153,5 +106,4 @@ function showPreview() {
     }
 }
 add.addEventListener("click", addBoard)
-prev.addEventListener("click", prevBoard)
-next.addEventListener("click", nextBoard)
+
