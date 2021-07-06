@@ -9,11 +9,6 @@ let strokebarPenTwo = document.querySelector('.strokebarPenTwo');
 let goBackStrokeOne = document.querySelector('#goBackStrokePenOnebar');
 let goBackStrokeTwo = document.querySelector('#goBackStrokePenTwobar');
 
-let tipPen1 = document.querySelector('#tipPen1');
-let tipPen2 = document.querySelector('#tipPen2');
-
-let tipText = '';
-
 function letsGoBack(gobackk,ele1,ele2) {
     gobackk.addEventListener('click', function (){
         ele1.style.display = 'flex';
@@ -23,10 +18,8 @@ function letsGoBack(gobackk,ele1,ele2) {
 
 penOne.addEventListener('click', function (){
     if (!penOne.classList.contains("selectedTool")){
-        tipText = tipPen1.innerText;
-        tipPen1.innerText = 'Select Palette';
         penOne.classList.add("selectedTool")
-        removeActiveStatus(tipText);
+        removeActiveStatus();
         activeElements.push(penOne)
         return
     }
@@ -40,7 +33,6 @@ penOne.addEventListener('click', function (){
 
 penTwo.addEventListener('click', function (){
     if (!penTwo.classList.contains("selectedTool")){
-        tipPen2.innerText = 'Select Palette'
         penTwo.classList.add("selectedTool")
         removeActiveStatus()
         activeElements.push(penTwo)

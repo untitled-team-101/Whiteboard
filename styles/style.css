@@ -1,12 +1,14 @@
 @import url(Dock.css);
 @import url(multipage.css);
 @import url(side-btn.css);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     user-select: none;
+    font-family: 'Ubuntu', sans-serif;
 }
 
 body {
@@ -51,4 +53,54 @@ body {
 
 .tooltip:hover .tooltiptext {
     visibility: unset;
+}
+.tooltip:hover .tooltiptext + .tooltiptext{
+    visibility: hidden;
+}
+.selectedTool:hover .tooltiptext + .tooltiptext{
+    visibility: unset;
+}
+.selectedTool:hover .tooltiptext{
+    visibility: hidden;
+}
+
+
+
+.hamburger.tooltip {
+    position:absolute;
+}
+
+.hamburger.tooltip .tooltiptext , .hamburger .tooltip .tooltiptext {
+    visibility: hidden;
+    background-color: rgba(0,0,0,0.5);
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    white-space: nowrap;
+    right: -2vh;
+    padding: 1vh;
+    top: auto;
+    bottom: 0;
+    transform: translateY(120%);
+    /* Position the tooltip */
+    font-size: 2vh;
+    position: absolute;
+    z-index: 1;
+}
+
+.hamburger.tooltip:hover .tooltiptext {
+    visibility: unset;
+}
+
+.hamburger .tooltip:hover .tooltiptext {
+    visibility: unset !important;
+}
+
+
+.hamburger.tooltip.expanded:hover .tooltiptext{
+    visibility: hidden;
+}
+
+.hamburger .tooltip{
+    position: relative;
 }
