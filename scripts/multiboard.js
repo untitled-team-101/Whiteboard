@@ -1,6 +1,5 @@
+"use strict"
 let boardSection = document.querySelector('.multipage-thumbnails')
-let prev = document.getElementById('prev')
-let next = document.getElementById('next')
 let add = document.getElementById('add')
 let closeBtn = document.querySelector('.close-multipage')
 let multipageBar = document.querySelector('.multipage-bar')
@@ -153,5 +152,4 @@ function showPreview() {
     }
 }
 add.addEventListener("click", addBoard)
-prev.addEventListener("click", prevBoard)
-next.addEventListener("click", nextBoard)
+
