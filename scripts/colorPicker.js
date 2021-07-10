@@ -17,6 +17,8 @@ colorPickerBackground.addEventListener('input', setBackgroundColor);
 
 function setBackgroundColor(){
     document.body.style.backgroundColor = colorPickerBackground.value
+    pencilBoxVars.backgroundColor = colorPickerBackground.value
+    showPreview()
 }
 
 function drawPen() {
