@@ -12,7 +12,7 @@
     align-items: center;
     flex-direction: column;
     transition: 1s ease;
-    border-radius: 15px;
+    border-radius: 2vh;
 }
 
 .close-multipage {
@@ -90,7 +90,7 @@
  }
 
 .close-multipage i{
-        transition: .5s ease;
+    transition: .5s ease;
 }
 
 .thumbnail-group {
@@ -127,7 +127,7 @@
     background: linear-gradient(196deg, rgba(255, 0, 236, 1) 0%, rgba(120, 0, 255, 1) 100%);
     font-family: 'Ubuntu', sans-serif;
     font-weight: bold;
-    border-top-right-radius: 15px;
+    border-top-right-radius: 2vh;
 }
 
 .multipage-thumbnails {
@@ -176,22 +176,31 @@
 
 ::-webkit-scrollbar {
     width: 7px;
+    height: 80px;
+    display: block;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    height: 80px;
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     background: #888;
+    height: 80px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #555;
+    height: 80px;
 }
 .number{
     font-size: 3vh;
     font-family: Ubuntu, sans-serif;
 }
 
-
+::-webkit-scrollbar-track-piece:end {
+    background: transparent;
+    margin-bottom: calc(1vh + 4px);
+}

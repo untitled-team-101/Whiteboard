@@ -10,7 +10,7 @@
     justify-content: space-evenly;
     border: 1px solid #c1c1c1;
     border-radius: 10px;
-    transition: .5s ease;
+    transition: transform .5s ease;
     transform: translate(0,9vh);
     transition-delay: 2s;
 
