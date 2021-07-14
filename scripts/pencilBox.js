@@ -59,6 +59,7 @@ function addHighlighterEvents() {
     onMouseMoveEvent = function(event) {
         if (!pencilBoxVars.painting) return;
         ctx.lineWidth = 30;
+        ctx.globalCompositeOperation = "multiply";
         ctx.strokeStyle = 'greenyellow';
         ctx.lineCap = 'square';
         ctx.lineTo(event.clientX, event.clientY);
@@ -71,6 +72,7 @@ function addHighlighterEvents() {
     }
     onMouseUpEvent = function() {
         pencilBoxVars.painting = false;
+        ctx.globalCompositeOperation = "source-over";
     }
     addAllEvents();
 }
