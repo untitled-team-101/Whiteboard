@@ -72,6 +72,7 @@ function addHighlighterEvents() {
     }
     onMouseUpEvent = function() {
         pencilBoxVars.painting = false;
+        ctx.globalCompositeOperation = "source-over";
     }
     addAllEvents();
 }
