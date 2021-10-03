@@ -1,6 +1,6 @@
 ## Contribution Guidelines
 
-[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Buddhad/Contribution_Website?logo=git&logoColor=white)](https://github.com//Buddhad/Contribution_Website/compare) [![GitHub contributors](https://img.shields.io/github/contributors/untitled-team-101/Whiteboard?logo=github)](https://github.com/Buddhad/Contribution_Website/graphs/contributors)
+[![GitHub contributors](https://img.shields.io/github/contributors/untitled-team-101/Whiteboard?logo=github)](https://github.com/Buddhad/Contribution_Website/graphs/contributors)
 
 - Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
 
@@ -10,5 +10,6 @@
 
 - When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
 
+- Please don't create a PR without an issue. You can create a issue if you find any. 
 
 - Please read our [Code of Conduct](./CODE_OF_CONDUCT.md).
