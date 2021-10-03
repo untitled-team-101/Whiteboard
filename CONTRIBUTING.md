@@ -11,6 +11,4 @@
 - When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
 
 
-- Always create PR to `develop` branch.
-
 - Please read our [Code of Conduct](./CODE_OF_CONDUCT.md).
