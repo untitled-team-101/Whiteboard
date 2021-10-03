@@ -1,157 +1,121 @@
-let boardSection = document.querySelector('.multipage-thumbnails')
-let prev = document.getElementById('prev')
-let next = document.getElementById('next')
-let add = document.getElementById('add')
-let closeBtn = document.querySelector('.close-multipage')
-let multipageBar = document.querySelector('.multipage-bar')
+let boardSection = document.querySelector(".multipage-thumbnails");
+let prev = document.getElementById("prev");
+let next = document.getElementById("next");
+let add = document.getElementById("add");
+let closeBtn = document.querySelector(".close-multipage");
+let multipageBar = document.querySelector(".multipage-bar");
 
-closeBtn.addEventListener("click", function() {
-    multipageBar.classList.toggle('closed');
-})
+closeBtn.addEventListener("click", function () {
+  multipageBar.classList.toggle("closed");
+});
 
-let currentIndex = 0;
-let i = 0;
-let boardStore = []
-let boardTemplate = function(board, boardUndoList, boardRedoList) {
-    return {
-        board,
-        boardUndoList,
-        boardRedoList
-    }
+let currentBoardIndex = 0;
+let boardStore = [];
+let boardTemplate = function (board, boardUndoList, boardRedoList) {
+  return {
+    board,
+    boardUndoList,
+    boardRedoList,
+  };
+};
+
+function initMultiBoardDrawer() {
+  boardStore.push(boardTemplate(canvas.toDataURL(), [], []));
+  createNewBoardAtTheEnd();
 }
 
-function loadHistory() {
-    save.undo_list = boardStore[currentIndex].boardUndoList
-    save.redo_list = boardStore[currentIndex].boardRedoList
+function loadCurrentBoardHistory() {
+  save.undo_list = boardStore[currentBoardIndex].boardUndoList;
+  save.redo_list = boardStore[currentBoardIndex].boardRedoList;
 }
 
-function saveHistory() {
-    boardStore[currentIndex].boardUndoList = save.undo_list
-    boardStore[currentIndex].boardRedoList = save.redo_list
+function saveCurrentBoard() {
+  boardStore[currentBoardIndex].board = canvas.toDataURL();
+  boardStore[currentBoardIndex].boardUndoList = save.undo_list;
+  boardStore[currentBoardIndex].boardRedoList = save.redo_list;
+
+  const selectedBoard = document.querySelector("div.thumbnail.selected");
+  selectedBoard.children[0].src = boardStore[currentBoardIndex].board;
 }
 
 function addBoard() {
-    if (currentIndex + 1 >= boardStore.length) {
-        currentIndex += 1;
-        let board = canvas.toDataURL()
-        let currentBoard = boardTemplate(board, save.undo_list, save.redo_list)
-        boardStore.push(currentBoard)
-        save.undo_list = []
-        save.redo_list = []
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-    } else {
-        saveHistory();
-        boardStore[currentIndex].board = canvas.toDataURL();
-        currentIndex = boardStore.length
-        ctx.clearRect(0, 0, canvas.width, canvas.height)
-        board = canvas.toDataURL()
-        let currentBoard = boardTemplate(board, save.undo_list, save.redo_list)
-        save.undo_list = []
-        save.redo_list = []
-        boardStore.push(currentBoard)
-    }
-    showPreview()
+  saveCurrentBoard();
+
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  let newBoard = boardTemplate(canvas.toDataURL(), [], []);
+  boardStore.push(newBoard);
+
+  currentBoardIndex = boardStore.length - 1;
+
+  createNewBoardAtTheEnd();
+
+  loadCurrentBoardHistory();
 }
 
-function prevBoard() {
-    if (currentIndex === 0) {
-        window.alert("ANDHE PEECHE KOI BOARD NAHI HAI !!")
-    } else {
-        if (currentIndex === boardStore.length) {
-            let temp = [save.undo_list, save.redo_list];
-            addBoard()
-            save.undo_list = temp[0]
-            save.redo_list = temp[1]
-            currentIndex -= 1
-        } else {
-            boardStore[currentIndex].board = canvas.toDataURL()
-        }
-        saveHistory();
-        currentIndex -= 1
-        let previousState = boardStore[currentIndex].board
-        let currImg = document.createElement('img')
-        currImg.src = previousState
-        currImg.onload = function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-            ctx.drawImage(currImg, 0, 0)
-            checkBoardRequest()
-        }
-        loadHistory();
-    }
-    showPreview();
+function toggleSelectedBoard() {
+  const selectedBoard = document.querySelector("div.thumbnail.selected");
+  selectedBoard.classList.remove("selected");
+
+  const newlySelectedBoard = document.querySelector(
+    `div.multipage-thumbnails > div:nth-child(${currentBoardIndex + 1})`
+  );
+  newlySelectedBoard.children[1].classList.add("selected");
 }
 
-function nextBoard() {
-    if (currentIndex >= boardStore.length - 1) {
-        window.alert("ANDHE AAGE KOI BOARD NAHI HAI !!")
-    } else {
-        saveHistory();
-        currentIndex += 1;
-        boardStore[currentIndex - 1].board = canvas.toDataURL()
-        let nextState = boardStore[currentIndex].board
-        let currImg = document.createElement('img')
-        currImg.src = nextState
-        currImg.onload = function() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height)
-            ctx.drawImage(currImg, 0, 0)
-            checkBoardRequest()
-        }
-        loadHistory();
-    }
-    showPreview();
+function selectBoard(boardIndex) {
+  saveCurrentBoard();
+
+  currentBoardIndex = boardIndex;
+
+  toggleSelectedBoard();
+
+  let boardContent = document.createElement("img");
+  boardContent.src = boardStore[currentBoardIndex].board;
+
+  boardContent.onload = function () {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(boardContent, 0, 0);
+  };
+
+  loadCurrentBoardHistory();
 }
 
-let requestedBoard = 0
-let requestingBoard = false
-function checkBoardRequest(){
-    if (!requestingBoard)
-        return
-    if (currentIndex < requestedBoard)
-        nextBoard()
-    else if (currentIndex > requestedBoard)
-        prevBoard()
-    else
-        requestingBoard = false
+function createNewBoardAtTheEnd() {
+ const selectedBoard = document.querySelector("div.thumbnail.selected");
+
+  if (selectedBoard !== null) 
+    selectedBoard.classList.remove("selected");
+  
+  const boardIndex = boardStore.length - 1;
+  let boardPreview = boardStore[boardIndex];
+
+  let thumbnail_group = document.createElement("div");
+  let number = document.createElement("div");
+  let thumbnail = document.createElement("div");
+  let previewImg = document.createElement("img");
+
+  thumbnail_group.classList.add("thumbnail-group");
+  number.classList.add("number");
+  thumbnail.classList.add("thumbnail");
+  thumbnail.classList.add("selected");
+  previewImg.classList.add("thumb-img");
+
+  number.innerHTML = boardIndex + 1;
+
+  previewImg.src = boardPreview.board;
+  previewImg.style.backgroundColor = pencilBoxVars.backgroundColor;
+
+  thumbnail.thumbIndex = boardIndex;
+
+  thumbnail.onclick = function () {
+    selectBoard(thumbnail.thumbIndex);
+  };
+
+  thumbnail_group.appendChild(number);
+  thumbnail_group.appendChild(thumbnail);
+  thumbnail.appendChild(previewImg);
+  boardSection.appendChild(thumbnail_group);
 }
 
-function showPreview() {
-    let num = 0;
-    boardSection.innerHTML = "";
-    let prewiewIndex = 0
-    for (let boardPreview of boardStore) {
-        let thumbnail_group = document.createElement('div')
-        let number = document.createElement('div')
-        let thumbnail = document.createElement('div')
-        let previewImg = document.createElement('img')
-
-        thumbnail_group.classList.add('thumbnail-group')
-        number.classList.add('number')
-        thumbnail.classList.add('thumbnail')
-        previewImg.classList.add('thumb-img')
-
-        num += 1
-        number.innerHTML = num
-
-        previewImg.src = boardPreview.board;
-        previewImg.style.backgroundColor = pencilBoxVars.backgroundColor;
-
-        thumbnail.thumbIndex = prewiewIndex
-        thumbnail.onclick = function (){
-            requestingBoard = true
-            requestedBoard = thumbnail.thumbIndex
-            checkBoardRequest()
-        }
-        if(currentIndex === prewiewIndex){
-            thumbnail.classList.add("selected")
-        }
-
-        thumbnail_group.appendChild(number)
-        thumbnail_group.appendChild(thumbnail)
-        thumbnail.appendChild(previewImg)
-        boardSection.appendChild(thumbnail_group);
-        prewiewIndex++
-    }
-}
-add.addEventListener("click", addBoard)
-prev.addEventListener("click", prevBoard)
-next.addEventListener("click", nextBoard)
+add.addEventListener("click", addBoard);
+initMultiBoardDrawer();
