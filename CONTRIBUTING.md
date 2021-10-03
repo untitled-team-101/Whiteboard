@@ -1,15 +1,16 @@
-# Contributing
+## Contribution Guidelines
 
-We love pull requests from everyone. By participating in this project, you
-agree to abide by the [Contributor Covenant](http://contributor-covenant.org).
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Buddhad/Contribution_Website?logo=git&logoColor=white)](https://github.com//Buddhad/Contribution_Website/compare) [![GitHub contributors](https://img.shields.io/github/contributors/untitled-team-101/Whiteboard?logo=github)](https://github.com/Buddhad/Contribution_Website/graphs/contributors) [![grawish](https://img.shields.io/badge/Author-@vinitshahdeo-gray.svg?colorA=gray&colorB=dodgerblue&logo=github)](https://github.com/grawish/)
 
-## Steps
+- Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
 
-1. [Fork](https://help.github.com/articles/fork-a-repo/) this project
-2. [Clone](https://help.github.com/articles/fork-a-repo/#step-2-create-a-local-clone-of-your-fork) your forked version `git clone git@github.com:<YOUR-USERNAME>/hacktoberfest-practice.git`
-3. Make changes 
-4. [Commit](https://help.github.com/articles/adding-a-file-to-a-repository-using-the-command-line/) your changes (write a short descriptive message of what you have done)
-5. [Push](https://help.github.com/articles/pushing-to-a-remote/) your changes to your forked version
-6. Go to original project on GitHub & Create a [Pull Request](https://help.github.com/articles/about-pull-requests/)
+- Make sure your PR's description contains GitHub's special keyword references that automatically close the related issue when the PR is merged. (Check [this](https://github.com/blog/1506-closing-issues-via-pull-requests) for more info)
 
-**DONE**
+- When you make very very minor changes to a PR of yours (like for example fixing a text in button, minor changes requested by reviewers) make sure you squash your commits afterward so that you don't have an absurd number of commits for a very small fix. (Learn how to squash at [here](https://davidwalsh.name/squash-commits-git))
+
+- When you're submitting a PR for a UI-related issue, it would be really awesome if you add a screenshot of your change or a link to a deployment where it can be tested out along with your PR. It makes it very easy for the reviewers and you'll also get reviews quicker.
+
+
+- Always create PR to `develop` branch.
+
+- Please read our [Code of Conduct](./CODE_OF_CONDUCT.md).
