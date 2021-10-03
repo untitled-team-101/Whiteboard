@@ -103,7 +103,7 @@ function createNewBoardAtTheEnd() {
   number.innerHTML = boardIndex + 1;
 
   previewImg.src = boardPreview.board;
-  previewImg.style.backgroundColor = pencilBoxVars.backgroundColor;
+  previewImg.style.backgroundColor = colorPickerBackground.value
 
   thumbnail.thumbIndex = boardIndex;
 

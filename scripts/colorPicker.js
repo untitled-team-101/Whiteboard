@@ -17,6 +17,9 @@ colorPickerBackground.addEventListener('input', setBackgroundColor);
 
 function setBackgroundColor(){
     document.body.style.backgroundColor = colorPickerBackground.value
+    const boards = document.querySelectorAll('.thumb-img')
+    for(let i = 0; i < boards.length; ++i)
+        boards[i].style.backgroundColor = colorPickerBackground.value
 }
 
 function drawPen() {
