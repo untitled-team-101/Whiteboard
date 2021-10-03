@@ -1,6 +1,6 @@
 ## Contribution Guidelines
 
-[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Buddhad/Contribution_Website?logo=git&logoColor=white)](https://github.com//Buddhad/Contribution_Website/compare) [![GitHub contributors](https://img.shields.io/github/contributors/untitled-team-101/Whiteboard?logo=github)](https://github.com/Buddhad/Contribution_Website/graphs/contributors) [![grawish](https://img.shields.io/badge/Author-@vinitshahdeo-gray.svg?colorA=gray&colorB=dodgerblue&logo=github)](https://github.com/grawish/)
+[![GitHub pull requests](https://img.shields.io/github/issues-pr-raw/Buddhad/Contribution_Website?logo=git&logoColor=white)](https://github.com//Buddhad/Contribution_Website/compare) [![GitHub contributors](https://img.shields.io/github/contributors/untitled-team-101/Whiteboard?logo=github)](https://github.com/Buddhad/Contribution_Website/graphs/contributors)
 
 - Write clear meaningful git commit messages (Do read [this](http://chris.beams.io/posts/git-commit/)).
 
