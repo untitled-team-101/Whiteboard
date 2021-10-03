@@ -61,7 +61,9 @@ window.addEventListener("keydown", (event) => {
 document.querySelector("#download")
     .addEventListener("click", ()=>{
         let link = document.createElement('a');
-        link.download = 'untitled.png';
+        let fileName = "untitled"
+        fileName = prompt("Please enter your file name", fileName);
+        link.download = fileName;
         link.href = document.getElementById('canvas').toDataURL()
         link.click();
     })
