@@ -94,7 +94,7 @@
 .clear{
     animation: delete .3s ease infinite;
 }
-#shapes:hover{
+#shapes:hover .fa-shapes{
     animation: rotate 1s ease infinite;
 }
 @keyframes cursorblink {
