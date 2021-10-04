@@ -87,8 +87,8 @@ function addHighlighterEvents() {
     }
     onclick = function (event) {
         ctx.beginPath();
-        ctx.fillRect(event.clientX, event.clientY, pencilBoxVars.highlighterWidth / 2, pencilBoxVars.highlighterWidth / 2);
         ctx.fillStyle = 'greenyellow';
+        ctx.fillRect(event.clientX - pencilBoxVars.highlighterWidth / 2, event.clientY - pencilBoxVars.highlighterWidth / 2, pencilBoxVars.highlighterWidth, pencilBoxVars.highlighterWidth);
         ctx.fill();
     }
     addAllEvents();
