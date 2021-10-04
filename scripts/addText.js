@@ -32,10 +32,10 @@ document.getElementById("text-stroke-width")
 function addTextToCanvas(){
     let text = addTextField.value
     function addText(event) {
-        save.saveUndoState();
         ctx.font = `${addTextVars.textSize}px 'serif'`;
         ctx.fillStyle = addTextVars.textColor
         ctx.fillText(text, event.clientX, event.clientY)
+        save.saveState();
         canvas.removeEventListener("click", addText)
     }
     canvas.addEventListener("click", addText)
