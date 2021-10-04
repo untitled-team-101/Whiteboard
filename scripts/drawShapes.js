@@ -18,7 +18,6 @@ function setLineStart(event) {
     ctx.moveTo(event.clientX, event.clientY)
     ctx.lineTo(event.clientX, event.clientY)
     ctx.stroke()
-    save.saveUndoState();
 }
 
 function showCurrentLine(event) {
@@ -37,7 +36,9 @@ function showCurrentLine(event) {
 }
 
 function drawLine(event) {
+    if (!painting) return;
     painting = false;
+    save.saveState();
 }
 
 function setRectStart(event) {
@@ -51,7 +52,6 @@ function setRectStart(event) {
     ctx.moveTo(event.clientX, event.clientY)
     ctx.rect(shapeDrawVars.startX, shapeDrawVars.startY, event.clientX - shapeDrawVars.startX, event.clientY - shapeDrawVars.startY)
     ctx.stroke()
-    save.saveUndoState();
 }
 
 function showCurrentRect(event) {
@@ -70,7 +70,9 @@ function showCurrentRect(event) {
 }
 
 function drawRect(event) {
+    if (!painting) return;
     painting = false;
+    save.saveState();
 }
 
 function setCircleStart(event) {
@@ -88,7 +90,6 @@ function setCircleStart(event) {
     ctx.moveTo(length + shapeDrawVars.startX, shapeDrawVars.startY)
     ctx.arc(shapeDrawVars.startX, shapeDrawVars.startY, radius, 0, 2 * Math.PI)
     ctx.stroke()
-    save.saveUndoState();
 }
 
 function showCurrentCircle(event) {
@@ -111,7 +112,9 @@ function showCurrentCircle(event) {
 }
 
 function drawCircle(event) {
+    if (!painting) return;
     painting = false;
+    save.saveState();
 }
 
 function setTriangleStart(event) {
@@ -122,7 +125,6 @@ function setTriangleStart(event) {
     ctx.beginPath()
     ctx.lineWidth = shapeDrawVars.strokeWidth
     ctx.strokeStyle = shapeDrawVars.strokeColor
-    save.saveUndoState();
 }
 
 function showCurrentTriangle(event) {
@@ -147,7 +149,9 @@ function showCurrentTriangle(event) {
 }
 
 function drawTriangle(event) {
+    if (!painting) return;
     painting = false;
+    save.saveState();
 }
 
 for (let addShapeButton of addShapeButtons) {

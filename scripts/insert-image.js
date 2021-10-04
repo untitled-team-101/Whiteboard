@@ -10,13 +10,13 @@ function insertImage(event){
                 let imgDrawListener = function(e) {
                     let [x, y] = getLocation(canvas, e);
                     ctx.drawImage(image,x,y);
+                    save.saveState();
                     canvas.removeEventListener('click', imgDrawListener);
                 }
                 canvas.addEventListener('click', imgDrawListener)
             }
         }
         reader.readAsDataURL(file);
-        save.saveUndoState();
     }
 }
 
