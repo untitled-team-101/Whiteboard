@@ -15,7 +15,7 @@ let pencilBoxVars = {
 addPenOneEvents()
 function addPenOneEvents() {
     removeEvents();
-    onMouseMoveEvent = function(event) {
+    onMouseMoveEvent = function (event) {
         if (!pencilBoxVars.painting) return;
         ctx.lineWidth = pencilBoxVars.penWidth1;
         ctx.strokeStyle = pencilBoxVars.paintingColorOne;
@@ -23,12 +23,12 @@ function addPenOneEvents() {
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
-    onMouseDownEvent = function() {
+    onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
         ctx.beginPath();
         save.saveUndoState();
     }
-    onMouseUpEvent = function() {
+    onMouseUpEvent = function () {
         pencilBoxVars.painting = false;
     }
     onclick = function (event) {
@@ -42,7 +42,7 @@ function addPenOneEvents() {
 
 function addPenTwoEvents() {
     removeEvents();
-    onMouseMoveEvent = function(event) {
+    onMouseMoveEvent = function (event) {
         if (!pencilBoxVars.painting) return;
         ctx.lineWidth = pencilBoxVars.penWidth2;
         ctx.strokeStyle = pencilBoxVars.paintingColorTwo;
@@ -50,12 +50,12 @@ function addPenTwoEvents() {
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
-    onMouseDownEvent = function() {
+    onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
         ctx.beginPath();
         save.saveUndoState();
     }
-    onMouseUpEvent = function() {
+    onMouseUpEvent = function () {
         pencilBoxVars.painting = false;
     }
     onclick = function (event) {
@@ -69,7 +69,7 @@ function addPenTwoEvents() {
 
 function addHighlighterEvents() {
     removeEvents();
-    onMouseMoveEvent = function(event) {
+    onMouseMoveEvent = function (event) {
         if (!pencilBoxVars.painting) return;
         ctx.lineWidth = pencilBoxVars.highlighterWidth;
         ctx.strokeStyle = 'greenyellow';
@@ -77,17 +77,17 @@ function addHighlighterEvents() {
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
-    onMouseDownEvent = function() {
+    onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
         ctx.beginPath();
         save.saveUndoState();
     }
-    onMouseUpEvent = function() {
+    onMouseUpEvent = function () {
         pencilBoxVars.painting = false;
     }
     onclick = function (event) {
         ctx.beginPath();
-        ctx.fillRect(event.clientX, event.clientY, pencilBoxVars.highlighterWidth, pencilBoxVars.highlighterWidth);
+        ctx.fillRect(event.clientX, event.clientY, pencilBoxVars.highlighterWidth / 2, pencilBoxVars.highlighterWidth / 2);
         ctx.fillStyle = 'greenyellow';
         ctx.fill();
     }
@@ -97,21 +97,21 @@ function addHighlighterEvents() {
 
 function addEraserEvents() {
     removeEvents();
-    onMouseMoveEvent = function(event) {
+    onMouseMoveEvent = function (event) {
         if (!pencilBoxVars.painting) return;
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
-    onMouseDownEvent = function() {
+    onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
         save.saveUndoState();
         ctx.beginPath();
         ctx.lineWidth = pencilBoxVars.eraserWidth;
         ctx.lineCap = 'round';
-        ctx.globalCompositeOperation="destination-out";
+        ctx.globalCompositeOperation = "destination-out";
     }
-    onMouseUpEvent = function() {
-        ctx.globalCompositeOperation="source-over";
+    onMouseUpEvent = function () {
+        ctx.globalCompositeOperation = "source-over";
         pencilBoxVars.painting = false;
     }
     onclick = function () {
@@ -123,7 +123,7 @@ function addEraserEvents() {
 }
 
 for (let ele of penBoxEle) {
-    ele.addEventListener('click', function() {
+    ele.addEventListener('click', function () {
         if (ele.id === 'penOne') {
             addPenOneEvents();
         } else if (ele.id === 'penTwo') {
