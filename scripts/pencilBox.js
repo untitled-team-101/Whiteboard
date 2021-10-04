@@ -23,13 +23,15 @@ function addPenOneEvents() {
         ctx.lineTo(event.clientX, event.clientY);
         ctx.stroke();
     }
-    onMouseDownEvent = function () {
+    onMouseDownEvent = function() {
+        if (pencilBoxVars.painting) return;
         pencilBoxVars.painting = true;
         ctx.beginPath();
-        save.saveUndoState();
     }
-    onMouseUpEvent = function () {
+    onMouseUpEvent = function() {
+        if (!pencilBoxVars.painting) return;
         pencilBoxVars.painting = false;
+        save.saveState();
     }
     onclick = function (event) {
         ctx.beginPath();
@@ -53,10 +55,10 @@ function addPenTwoEvents() {
     onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
         ctx.beginPath();
-        save.saveUndoState();
     }
     onMouseUpEvent = function () {
         pencilBoxVars.painting = false;
+        save.saveState();
     }
     onclick = function (event) {
         ctx.beginPath();
@@ -80,10 +82,10 @@ function addHighlighterEvents() {
     onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
         ctx.beginPath();
-        save.saveUndoState();
     }
     onMouseUpEvent = function () {
         pencilBoxVars.painting = false;
+        save.saveState();
     }
     onclick = function (event) {
         ctx.beginPath();
@@ -104,7 +106,6 @@ function addEraserEvents() {
     }
     onMouseDownEvent = function () {
         pencilBoxVars.painting = true;
-        save.saveUndoState();
         ctx.beginPath();
         ctx.lineWidth = pencilBoxVars.eraserWidth;
         ctx.lineCap = 'round';
@@ -113,6 +114,7 @@ function addEraserEvents() {
     onMouseUpEvent = function () {
         ctx.globalCompositeOperation = "source-over";
         pencilBoxVars.painting = false;
+        save.saveState();
     }
     onclick = function () {
         ctx.beginPath();

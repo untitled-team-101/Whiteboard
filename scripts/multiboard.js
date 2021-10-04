@@ -11,28 +11,27 @@ closeBtn.addEventListener("click", function () {
 
 let currentBoardIndex = 0;
 let boardStore = [];
-let boardTemplate = function (board, boardUndoList, boardRedoList) {
+const newBoardTemplate = function () {
   return {
-    board,
-    boardUndoList,
-    boardRedoList,
+    board: canvas.toDataURL(),
+    state_history: [canvas.toDataURL()],
+    current_offset: 0,
   };
 };
-
 function initMultiBoardDrawer() {
-  boardStore.push(boardTemplate(canvas.toDataURL(), [], []));
+  boardStore.push(newBoardTemplate());
   createNewBoardAtTheEnd();
 }
 
 function loadCurrentBoardHistory() {
-  save.undo_list = boardStore[currentBoardIndex].boardUndoList;
-  save.redo_list = boardStore[currentBoardIndex].boardRedoList;
+  save.state_history = boardStore[currentBoardIndex].state_history;
+  save.current_offset = boardStore[currentBoardIndex].current_offset;
 }
 
 function saveCurrentBoard() {
   boardStore[currentBoardIndex].board = canvas.toDataURL();
-  boardStore[currentBoardIndex].boardUndoList = save.undo_list;
-  boardStore[currentBoardIndex].boardRedoList = save.redo_list;
+  boardStore[currentBoardIndex].state_history = save.state_history;
+  boardStore[currentBoardIndex].current_offset = save.current_offset;
 
   const selectedBoard = document.querySelector("div.thumbnail.selected");
   selectedBoard.children[0].src = boardStore[currentBoardIndex].board;
@@ -42,8 +41,8 @@ function addBoard() {
   saveCurrentBoard();
 
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  let newBoard = boardTemplate(canvas.toDataURL(), [], []);
-  boardStore.push(newBoard);
+  current_state = canvas.toDataURL()
+  boardStore.push(newBoardTemplate());
 
   currentBoardIndex = boardStore.length - 1;
 
@@ -83,11 +82,11 @@ function selectBoard(boardIndex) {
 function createNewBoardAtTheEnd() {
  const selectedBoard = document.querySelector("div.thumbnail.selected");
 
-  if (selectedBoard !== null) 
+  if (selectedBoard !== null)
     selectedBoard.classList.remove("selected");
-  
+
   const boardIndex = boardStore.length - 1;
-  let boardPreview = boardStore[boardIndex];
+  let boardPreview = boardStore[boardIndex].board;
 
   let thumbnail_group = document.createElement("div");
   let number = document.createElement("div");
@@ -102,7 +101,7 @@ function createNewBoardAtTheEnd() {
 
   number.innerHTML = boardIndex + 1;
 
-  previewImg.src = boardPreview.board;
+  previewImg.src = boardPreview;
   previewImg.style.backgroundColor = colorPickerBackground.value
 
   thumbnail.thumbIndex = boardIndex;
