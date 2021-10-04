@@ -9,6 +9,7 @@ let pencilBoxVars = {
     painting: false,
     penWidth1: 10,
     penWidth2: 10,
+    highlighterWidth: 30,
     eraserWidth: 50
 };
 addPenOneEvents()
@@ -29,6 +30,12 @@ function addPenOneEvents() {
     }
     onMouseUpEvent = function() {
         pencilBoxVars.painting = false;
+    }
+    onclick = function (event) {
+        ctx.beginPath();
+        ctx.arc(event.clientX, event.clientY, pencilBoxVars.penWidth1 / 2, 0, 2 * Math.PI, false);
+        ctx.fillStyle = pencilBoxVars.paintingColorOne;
+        ctx.fill();
     }
     addAllEvents();
 }
@@ -51,6 +58,12 @@ function addPenTwoEvents() {
     onMouseUpEvent = function() {
         pencilBoxVars.painting = false;
     }
+    onclick = function (event) {
+        ctx.beginPath();
+        ctx.arc(event.clientX, event.clientY, pencilBoxVars.penWidth2 / 2, 0, 2 * Math.PI, false);
+        ctx.fillStyle = pencilBoxVars.paintingColorTwo;
+        ctx.fill();
+    }
     addAllEvents();
 }
 
@@ -58,7 +71,7 @@ function addHighlighterEvents() {
     removeEvents();
     onMouseMoveEvent = function(event) {
         if (!pencilBoxVars.painting) return;
-        ctx.lineWidth = 30;
+        ctx.lineWidth = pencilBoxVars.highlighterWidth;
         ctx.strokeStyle = 'greenyellow';
         ctx.lineCap = 'square';
         ctx.lineTo(event.clientX, event.clientY);
@@ -71,6 +84,12 @@ function addHighlighterEvents() {
     }
     onMouseUpEvent = function() {
         pencilBoxVars.painting = false;
+    }
+    onclick = function (event) {
+        ctx.beginPath();
+        ctx.fillRect(event.clientX, event.clientY, pencilBoxVars.highlighterWidth, pencilBoxVars.highlighterWidth);
+        ctx.fillStyle = 'greenyellow';
+        ctx.fill();
     }
     addAllEvents();
 }
@@ -94,6 +113,11 @@ function addEraserEvents() {
     onMouseUpEvent = function() {
         ctx.globalCompositeOperation="source-over";
         pencilBoxVars.painting = false;
+    }
+    onclick = function () {
+        ctx.beginPath();
+        ctx.lineWidth = pencilBoxVars.eraserWidth;
+        ctx.lineCap = 'round';
     }
     addAllEvents();
 }
