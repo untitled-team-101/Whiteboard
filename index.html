@@ -23,6 +23,7 @@
     <script src="scripts/expand-menu.js" defer></script>
     <script src="./scripts/insert-image.js" defer></script>
     <script src="./scripts/addText.js" defer></script>
+    <script src="./scripts/canvas-resize.js" defer></script>
 </head>
 
 <body>
@@ -49,8 +50,9 @@
     <span class="tooltiptext">Background Color <br> Undo <br> Redo <br> Download Board</span>
 </div>
 
-<div class="full-screen">
+<div class="full-screen tooltip">
     <i class="fas fa-expand-alt fas-icon-change"></i>
+    <span class="tooltiptext">FullScreen</span>
 </div>
 
 <canvas id="canvas"></canvas>
@@ -225,11 +227,14 @@
 </div>
 
 <div class="multipage-bar closed" id="boards">
-    <div class="close-multipage">
+    <div class="close-multipage tooltip">
         <i class="fas fa-chevron-left"></i>
+        <span class="tooltiptext">Collapse Multipage Section</span>
+        <span class="tooltiptext">Expand Multipage Section</span>
     </div>
-    <div class="showonexpand" id="add">
+    <div class="showonexpand tooltip" id="add">
         <i class="fas fa-plus"></i>
+        <span class="tooltiptext">Add Current Page</span>
     </div>
     <div class="multipage-titlebar">
         Multipages
@@ -246,7 +251,10 @@
         <div class="add-text-div">
             <input type="range" id="text-stroke-width" value="18" min="10" max="100"/>
         </div>
-        <div class="add-text-div"><button id="addTextButton">Add Text</button></div>
+        <div class="add-text-div">
+            <button id="addTextButton">Add Text</button>
+            <button id="cancelTextButton">Cancel</button>
+        </div>
     </div>
 </div>
 </body>

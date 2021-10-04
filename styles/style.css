@@ -104,3 +104,35 @@ body {
 .hamburger .tooltip{
     position: relative;
 }
+
+.full-screen.tooltip {
+    position: absolute;
+}
+
+
+.close-multipage.tooltip{
+    position: absolute;
+}
+.close-multipage .tooltiptext{
+    top: 2vh;
+    left: 4vw;
+}
+
+.close-multipage .tooltiptext{
+    top: 2vh;
+    left: 4vw;
+}
+
+
+.closed:hover .tooltiptext + .tooltiptext{
+    visibility: unset;
+}
+.closed:hover .tooltiptext{
+    visibility: hidden;
+}
+
+.showonexpand .tooltiptext{
+    top: 2vh;
+    left: 3vw;
+}
+
