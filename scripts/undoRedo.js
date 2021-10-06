@@ -54,6 +54,7 @@ function redo() {
         }
     }
 }
+
 undoBtn.addEventListener('click', undo)
 redoBtn.addEventListener('click', redo)
 
@@ -65,11 +66,3 @@ window.addEventListener("keydown", (event) => {
         if (event.ctrlKey)
             redo()
 })
-
-document.querySelector("#download")
-    .addEventListener("click", ()=>{
-        let link = document.createElement('a');
-        link.download = 'untitled.png';
-        link.href = document.getElementById('canvas').toDataURL()
-        link.click();
-    })

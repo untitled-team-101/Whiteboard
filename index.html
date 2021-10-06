@@ -6,6 +6,7 @@
     <title>Untitled WhiteBoard</title>
     <link rel="stylesheet" href="styles/style.css"/>
     <link rel="stylesheet" href="./styles/addText.css">
+    <link rel="stylesheet" href="./styles/saveFilePopup.css" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css"/>
     <script src="scripts/canvas.js" defer></script>
     <script src="scripts/script.js" defer></script>
@@ -23,6 +24,7 @@
     <script src="scripts/expand-menu.js" defer></script>
     <script src="./scripts/insert-image.js" defer></script>
     <script src="./scripts/addText.js" defer></script>
+    <script src="./scripts/download.js" defer></script>
 </head>
 
 <body>
@@ -247,6 +249,14 @@
             <input type="range" id="text-stroke-width" value="18" min="10" max="100"/>
         </div>
         <div class="add-text-div"><button id="addTextButton">Add Text</button></div>
+    </div>
+</div>
+<div id="saveFilePopup">
+    <div id="saveFilePopupContent">
+      <h3>Save Board</h3>
+      <input type="text" id="fileName" maxlength="30"/>
+      <button id="saveButton">Save</button>
+      <button id="cancelButton">Cancel</button>
     </div>
 </div>
 </body>

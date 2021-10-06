@@ -1,0 +1,52 @@
+#saveFilePopup {
+    position: fixed;
+    padding: 0;
+    margin: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 1000;
+    display: none;
+  }
+
+#saveFilePopupContent{
+    position: relative;
+    margin: auto;
+    width: 30%;
+    height: 25%;
+    padding: auto;
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    overflow: auto;
+}
+
+#saveFilePopupContent > input{
+    display: block;
+    margin: 5% auto 5%;
+    height: 20%;
+    width: 90%;
+    border-radius: 10px;
+    text-align: center;
+    color: grey;
+    font-weight: 400;
+}
+
+#saveFilePopupContent > h3{
+    margin-top: 5%;
+    color: black;
+}
+
+#saveFilePopupContent > button{
+    padding: 2.5%;
+    border-radius: 10px;
+    background-color: white;
+    margin: auto 2.5%;
+}
+
+#saveFilePopupContent > button:hover{
+    background-color: rgb(189, 181, 181);
+    font-weight: bold;
+}
