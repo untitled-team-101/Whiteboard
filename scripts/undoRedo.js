@@ -59,10 +59,22 @@ undoBtn.addEventListener('click', undo)
 redoBtn.addEventListener('click', redo)
 
 window.addEventListener("keydown", (event) => {
-    if (event.key === "z" || event.key === "Z")
-        if (event.ctrlKey)
-            undo()
-    if (event.key === "y" || event.key === "Y")
-        if (event.ctrlKey)
+    const isMac = navigator.platform.toUpperCase().indexOf('MAC') >= 0
+
+    if (isMac) {
+        if (event.code == 'KeyZ'
+            && (event.ctrlKey || event.metaKey)
+            && event.shiftKey
+        ) {
             redo()
+        } else if (event.code == 'KeyZ' && event.metaKey) {
+            undo()
+        }
+    } else {
+        if (event.code == 'KeyY' && event.ctrlKey) {
+            redo()
+        } else if (event.code == 'KeyZ' && event.ctrlKey) {
+            undo()
+        }
+    }
 })
