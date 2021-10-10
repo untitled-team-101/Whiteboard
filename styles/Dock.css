@@ -196,3 +196,7 @@ body.pen-cursor {
 #pen-cursor.active {
     display: block;
 }
+
+body.shape-cursor {
+    cursor: crosshair;
+}
