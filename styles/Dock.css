@@ -168,3 +168,35 @@
 .stroke{
     width: 100%;
 }
+
+body.pen-cursor {
+    cursor: none;
+}
+
+#pen-cursor {
+    background: #393e41;
+    height: 24px;
+    pointer-events: none;
+    width: 24px;
+    z-index: 9999;
+    border: 2px solid #f6f6f6;
+    position: absolute;
+    display: none;
+    margin: -12px -12px;
+}
+
+#pen-cursor.painting {
+    border-radius: 50%;
+}
+
+#pen-cursor.eraser {
+    border-radius: 10%;
+}
+
+#pen-cursor.active {
+    display: block;
+}
+
+body.shape-cursor {
+    cursor: crosshair;
+}

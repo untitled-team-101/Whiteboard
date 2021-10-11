@@ -5,6 +5,7 @@ let onMouseDownEvent = null;
 let onMouseUpEvent = null;
 let onMouseMoveEvent = null;
 let onMouseLeaveEvent = null;
+let onMouseEnterEvent = null;
 let painting = false;
 
 canvas.height = window.innerHeight;
@@ -15,6 +16,12 @@ function removeEvents(){
     canvas.removeEventListener('mousedown', onMouseDownEvent);
     canvas.removeEventListener('mouseup', onMouseUpEvent);
     canvas.removeEventListener("mouseleave", onMouseLeaveEvent);
+    canvas.removeEventListener("mouseenter", onMouseEnterEvent);
+    onMouseDownEvent = null;
+    onMouseUpEvent = null;
+    onMouseMoveEvent = null;
+    onMouseLeaveEvent = null;
+    onMouseEnterEvent = null;
 }
 
 function addAllEvents(){
@@ -22,4 +29,5 @@ function addAllEvents(){
     canvas.addEventListener('mousedown', onMouseDownEvent);
     canvas.addEventListener('mouseup', onMouseUpEvent);
     canvas.addEventListener("mouseleave", onMouseLeaveEvent);
+    canvas.addEventListener("mouseenter", onMouseEnterEvent);
 }

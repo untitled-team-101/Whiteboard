@@ -204,35 +204,56 @@ function drawTriangleEnd(event) {
 
 for (let addShapeButton of addShapeButtons) {
     addShapeButton.addEventListener("click", (event) => {
-        removeEvents()
+        removeEvents();
+
+        onMouseEnterEvent = function() {
+            toggleShapeCursor();
+        }
+
         if (addShapeButton.id === "shape-line") {
             setActiveStatus(addShapeButton)
             onMouseDownEvent = setLineStart
             onMouseUpEvent = drawLineEnd
             onMouseMoveEvent = showCurrentLine
-            onMouseLeaveEvent = drawLineEnd
+            onMouseLeaveEvent = function() {
+                drawLineEnd();
+                toggleShapeCursor();
+            }
         } else if (addShapeButton.id === "shape-rect") {
             setActiveStatus(addShapeButton)
             onMouseDownEvent = setRectStart
             onMouseUpEvent = drawRectEnd
             onMouseMoveEvent = showCurrentRect
-            onMouseLeaveEvent = drawRectEnd
+            onMouseLeaveEvent = function() {
+                drawRectEnd();
+                toggleShapeCursor();
+            }
         } else if (addShapeButton.id === "shape-circle") {
             setActiveStatus(addShapeButton)
             onMouseDownEvent = setCircleStart
             onMouseUpEvent = drawCircleEnd
             onMouseMoveEvent = showCurrentCircle
-            onMouseLeaveEvent = drawCircleEnd
+            onMouseLeaveEvent = function() {
+                drawCircleEnd();
+                toggleShapeCursor();
+            }
         } else if (addShapeButton.id === "shape-triangle") {
             setActiveStatus(addShapeButton)
             onMouseDownEvent = setTriangleStart
             onMouseUpEvent = drawTriangleEnd
             onMouseMoveEvent = showCurrentTriangle
-            onMouseLeaveEvent = drawTriangleEnd
+            onMouseLeaveEvent = function() {
+                drawTriangleEnd();
+                toggleShapeCursor();
+            }
         }
         addAllEvents()
         selectedPen = 3;
         selectedColor = color3;
         colorPickerShape.value = selectedColor;
     })
+}
+
+function toggleShapeCursor() {
+    document.body.classList.toggle('shape-cursor');
 }
