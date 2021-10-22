@@ -3,12 +3,13 @@ let colorPickerPenTwo = document.querySelector('#PenTwo-color-picker')
 let colorPickerShape = document.querySelector('#shape-color-picker');
 let colorPickerBackground = document.querySelector('#bg-color-picker');
 
-let selectedColor = '';
 let selectedPen = null;
-let color1 = 'green';
-let color2 = 'red';
-let color3 = 'black';
+let color1 = '#00FF00';
+let color2 = '#ff0000';
+let color3 = '#000000';
 let color4 = '#33ff00';
+let selectedColor = color3;
+
 
 colorPickerPenOne.addEventListener("input", drawPen);
 colorPickerPenTwo.addEventListener("input", drawPen);

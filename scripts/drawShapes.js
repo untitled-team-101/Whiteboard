@@ -2,7 +2,7 @@
 let addShapeButtons = document.querySelectorAll(".shape")
 
 let shapeDrawVars = {
-    strokeColor: "green",
+    strokeColor: color3,
     strokeWidth: 3,
     startX: 0,
     startY: 0,
