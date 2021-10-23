@@ -18,11 +18,22 @@ cancelButton.addEventListener("click", () => {
 });
 
 saveButton.addEventListener("click", () => {
+  // https://stackoverflow.com/a/50126796
+  canvas = document.getElementById("canvas")
+  const context = canvas.getContext('2d');
+  context.save();
+  context.globalCompositeOperation = 'destination-over';
+  context.fillStyle = "#333333";
+  context.fillRect(0, 0, canvas.width, canvas.height);
+
+
   const link = document.createElement("a");
   link.download = `${inputField.value}.png`;
   link.href = document.getElementById("canvas").toDataURL();
   link.click();
   showSaveFilePopup(false);
+  context.restore();
+
 });
 
 downloadButton.addEventListener("click", () => {
